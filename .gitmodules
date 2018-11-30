@@ -1,0 +1,3 @@
+[submodule "packages/mocha-modern"]
+	path = packages/mocha-modern
+	url = https://github.com/cspotcode/mocha-modern

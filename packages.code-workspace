@@ -1,0 +1,27 @@
+{
+    "settings": {
+        "files.exclude": {
+            "**/.git": true,
+            "**/.svn": true,
+            "**/.hg": true,
+            "**/CVS": true,
+            "**/.DS_Store": true,
+            "packages": true
+        },
+        "typescript.tsdk": "__ROOT__/node_modules/typescript/lib"
+    },
+    "folders": [
+        {
+            "name": "__ROOT__",
+            "path": "."
+        },
+        {
+            "name": "ignore-preprocessor",
+            "path": "packages/ignore-preprocessor"
+        },
+        {
+            "name": "mocha-modern",
+            "path": "packages/mocha-modern"
+        }
+    ]
+}

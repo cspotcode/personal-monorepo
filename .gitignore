@@ -1,0 +1,8 @@
+node_modules
+docs-clone
+{yarn,lerna,npm}-{debug,error}.log
+node_modules
+packages/*/dist
+packages/*/docs
+packages/*/node_modules
+yarn.lock

@@ -1,0 +1,18 @@
+{
+    "version": "independent",
+    "npmClient": "yarn",
+    "command": {
+        "publish": {
+            "allowBranch": "NEVER PUBLISH VIA LERNA"
+        },
+        "bootstrap": {
+            "npmClientArgs": [
+                "--no-package-lock"
+            ]
+        }
+    },
+    "packages": [
+        "packages/ignore-preprocessor",
+        "packages/mocha-modern"
+    ]
+}
