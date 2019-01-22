@@ -1,0 +1,33 @@
+{
+    "name": "ts-node-to",
+    "version": "0.0.1",
+    "description": "`ts-node --transpile-only` for shebangs",
+    "author": {
+        "name": "Andrew Bradley",
+        "url": "https://cspotcode.com"
+    },
+    "keywords": [
+        "TypeScript",
+        "ts-node",
+        "shebang"
+    ],
+    "homepage": "https://github.com/cspotcode/personal-monorepo/tree/master/packages/ts-node-to",
+    "bugs": "https://github.com/cspotcode/personal-monorepo/",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cspotcode/personal-monorepo.git"
+    },
+    "license": "MIT",
+    "bin": {
+        "ts-node-to": "bin.js"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "ts-node": "^8.0.1"
+    },
+    "files": [
+        "bin.js",
+        "package.json",
+        "README.md"
+    ]
+}
