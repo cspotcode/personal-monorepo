@@ -1,5 +1,7 @@
 Write shebangs that pass flags and environment variables.
 
+*Note: the current implementation is in Posix shell, so it works on Mac, Linux, and Windows Subsystem for Linux.  I have tentative plans to rewrite in Rust to support Windows natively.*
+
 # Quick example
 
 ```
