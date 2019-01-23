@@ -13,7 +13,7 @@
         "shebang"
     ],
     "homepage": "https://github.com/cspotcode/personal-monorepo/tree/master/packages/ts-node-to",
-    "bugs": "https://github.com/cspotcode/personal-monorepo/",
+    "bugs": "https://github.com/cspotcode/personal-monorepo/issues",
     "repository": {
         "type": "git",
         "url": "https://github.com/cspotcode/personal-monorepo.git"
@@ -31,5 +31,8 @@
         "bin.js",
         "package.json",
         "README.md"
-    ]
+    ],
+    "personalMonoRepoMeta": {
+        "livesIn": "mono"
+    }
 }
