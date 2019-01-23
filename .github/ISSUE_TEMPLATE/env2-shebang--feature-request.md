@@ -1,8 +1,8 @@
 ---
-name: 'preprocessor: Feature request'
+name: 'env2-shebang: Feature request'
 about: Suggest an idea for this project
-title: "[preprocessor] "
-labels: preprocessor
+title: "[env2-shebang] "
+labels: env2-shebang
 assignees: ''
 
 ---

@@ -1,0 +1,51 @@
+{
+    "settings": {
+        "files.exclude": {
+            "**/.git": true,
+            "**/.svn": true,
+            "**/.hg": true,
+            "**/CVS": true,
+            "**/.DS_Store": true,
+            "packages": true
+        },
+        "typescript.tsdk": "__ROOT__/node_modules/typescript/lib"
+    },
+    "folders": [
+        {
+            "name": "__ROOT__",
+            "path": "."
+        },
+        {
+            "name": "env2-shebang",
+            "path": "packages/env2-shebang"
+        },
+        {
+            "name": "html-comment-preprocessor",
+            "path": "packages/html-comment-preprocessor"
+        },
+        {
+            "name": "ignore-preprocessor",
+            "path": "packages/ignore-preprocessor"
+        },
+        {
+            "name": "mocha-modern",
+            "path": "packages/mocha-modern"
+        },
+        {
+            "name": "preprocessor",
+            "path": "packages/preprocessor"
+        },
+        {
+            "name": "scripting-core",
+            "path": "packages/scripting-core"
+        },
+        {
+            "name": "ts-node-to",
+            "path": "packages/ts-node-to"
+        },
+        {
+            "name": "typescript-toolbelt",
+            "path": "packages/typescript-toolbelt"
+        }
+    ]
+}

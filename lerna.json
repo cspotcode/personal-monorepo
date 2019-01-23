@@ -12,7 +12,13 @@
         }
     },
     "packages": [
+        "packages/env2-shebang",
+        "packages/html-comment-preprocessor",
         "packages/ignore-preprocessor",
-        "packages/mocha-modern"
+        "packages/mocha-modern",
+        "packages/preprocessor",
+        "packages/scripting-core",
+        "packages/ts-node-to",
+        "packages/typescript-toolbelt"
     ]
 }
