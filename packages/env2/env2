@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# Posix shell implementation of env2, for Linux and Mac
+
+# $1 is the script file.
+# We need to read line 2 of that file to extract the shebang.
+
+line=1
+while read LINE; do
+    if [ "$line" = 2 ]; then
+        # TODO validate that string starts with #!
+
+        # Parse second shebang line; trim leading #!
+        shebang="${line:2:9999}"
+        break
+    fi
+
+    # skip first shebang line
+    line=2
+done < "$1"
+
+if [ "$line" != 2 ]; then
+    # TODO fail because there's no second shebang
+    printf 'Error: Second line is not a shebang\n'
+    exit 1
+fi
+
+eval "$shebang" "$@"
+exit $?

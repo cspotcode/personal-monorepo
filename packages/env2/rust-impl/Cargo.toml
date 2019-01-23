@@ -1,0 +1,8 @@
+[package]
+name = "env2"
+version = "0.1.0"
+authors = ["Andrew Bradley <cspotcode@gmail.com>"]
+
+[dependencies]
+shellwords = "1.0.0"
+which = "2.0.1"
