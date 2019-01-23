@@ -1,0 +1,32 @@
+{
+    "name": "env2-shebang",
+    "version": "0.0.1",
+    "description": "Write shebangs that pass flags and environment variables.",
+    "author": {
+        "name": "Andrew Bradley",
+        "url": "https://cspotcode.com"
+    },
+    "keywords": [
+        "shebang",
+        "environment variable",
+        "argv",
+        "CLI",
+        "env"
+    ],
+    "homepage": "https://github.com/cspotcode/personal-monorepo/tree/master/packages/env2-shebang",
+    "bugs": "https://github.com/cspotcode/personal-monorepo/issues",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cspotcode/personal-monorepo.git"
+    },
+    "license": "MIT",
+    "bin": {
+        "env2": "./env2"
+    },
+    "files": [
+        "env2"
+    ],
+    "personalMonoRepoMeta": {
+        "livesIn": "mono"
+    }
+}
