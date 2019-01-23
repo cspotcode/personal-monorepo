@@ -1,8 +1,8 @@
 ---
-name: ignore-preprocessor: Bug report
+name: '[ignore-preprocessor]: Bug report'
 about: Create a report to help us improve
 title: "[ignore-preprocessor] "
-labels: ignore-preprocessor
+labels: P:ignore-preprocessor, bug
 assignees: ''
 
 ---

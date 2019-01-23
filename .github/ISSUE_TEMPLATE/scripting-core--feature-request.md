@@ -1,8 +1,8 @@
 ---
-name: 'scripting-core: Feature request'
+name: '[scripting-core]: Feature request'
 about: Suggest an idea for this project
 title: "[scripting-core] "
-labels: scripting-core
+labels: P:scripting-core, enhancement
 assignees: ''
 
 ---

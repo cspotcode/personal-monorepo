@@ -1,8 +1,8 @@
 ---
-name: 'ts-node-to: Feature request'
+name: '[ts-node-to]: Feature request'
 about: Suggest an idea for this project
 title: "[ts-node-to] "
-labels: ts-node-to
+labels: P:ts-node-to, enhancement
 assignees: ''
 
 ---

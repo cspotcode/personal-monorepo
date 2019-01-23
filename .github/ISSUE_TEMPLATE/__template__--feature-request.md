@@ -1,8 +1,8 @@
 ---
-name: '<%= name %>: Feature request'
+name: '[<%= name %>]: Feature request'
 about: Suggest an idea for this project
 title: "[<%= name %>] "
-labels: <%= name %>
+labels: P:<%= name %>, enhancement
 assignees: ''
 
 ---

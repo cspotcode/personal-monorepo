@@ -1,8 +1,8 @@
 ---
-name: 'env2-shebang: Feature request'
+name: '[env2-shebang]: Feature request'
 about: Suggest an idea for this project
 title: "[env2-shebang] "
-labels: env2-shebang
+labels: P:env2-shebang, enhancement
 assignees: ''
 
 ---

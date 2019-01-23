@@ -1,8 +1,8 @@
 ---
-name: scripting-core: Bug report
+name: '[scripting-core]: Bug report'
 about: Create a report to help us improve
 title: "[scripting-core] "
-labels: scripting-core
+labels: P:scripting-core, bug
 assignees: ''
 
 ---

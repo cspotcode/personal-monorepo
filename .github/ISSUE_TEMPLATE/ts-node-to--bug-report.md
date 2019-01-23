@@ -1,8 +1,8 @@
 ---
-name: ts-node-to: Bug report
+name: '[ts-node-to]: Bug report'
 about: Create a report to help us improve
 title: "[ts-node-to] "
-labels: ts-node-to
+labels: P:ts-node-to, bug
 assignees: ''
 
 ---

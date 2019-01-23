@@ -1,8 +1,8 @@
 ---
-name: html-comment-preprocessor: Bug report
+name: '[html-comment-preprocessor]: Bug report'
 about: Create a report to help us improve
 title: "[html-comment-preprocessor] "
-labels: html-comment-preprocessor
+labels: P:html-comment-preprocessor, bug
 assignees: ''
 
 ---

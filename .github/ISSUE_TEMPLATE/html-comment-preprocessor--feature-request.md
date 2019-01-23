@@ -1,8 +1,8 @@
 ---
-name: 'html-comment-preprocessor: Feature request'
+name: '[html-comment-preprocessor]: Feature request'
 about: Suggest an idea for this project
 title: "[html-comment-preprocessor] "
-labels: html-comment-preprocessor
+labels: P:html-comment-preprocessor, enhancement
 assignees: ''
 
 ---

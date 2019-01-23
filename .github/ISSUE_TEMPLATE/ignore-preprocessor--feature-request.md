@@ -1,8 +1,8 @@
 ---
-name: 'ignore-preprocessor: Feature request'
+name: '[ignore-preprocessor]: Feature request'
 about: Suggest an idea for this project
 title: "[ignore-preprocessor] "
-labels: ignore-preprocessor
+labels: P:ignore-preprocessor, enhancement
 assignees: ''
 
 ---

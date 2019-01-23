@@ -60,6 +60,7 @@ function main() {
 
     for(const packageName of packageNames) {
         if(packages[packageName].personalMonoRepoMeta!.livesIn === 'external') continue;
+
         writeTextFile(`packages/${ packageName }/.npmrc`, outdent `
             version-tag-prefix="${ readJsonFile(`./packages/${ packageName }/package.json`).name }@"
         `);
