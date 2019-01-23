@@ -14,7 +14,7 @@ or the more explicit alias:
 
 Shebangs don't let you specify environment variables or CLI parameters, which means there's no
 easy way to write executable scripts for `ts-node --transpile-only` without requiring the caller
-to set an environment variable.
+to set an environment variable.  (`#!/usr/bin/env ts-node --transpile-only` does not work on Linux; only Mac)
 
 On some projects, it's desirable to write some files as .ts.  This pairs well with ts-node.  However,
 it's annoying when it prevents code from running with compiler errors, which is why I always
