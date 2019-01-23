@@ -9,6 +9,7 @@
     "keywords": [
         "TypeScript",
         "ts-node",
+        "transpile-only",
         "shebang"
     ],
     "homepage": "https://github.com/cspotcode/personal-monorepo/tree/master/packages/ts-node-to",
@@ -19,7 +20,8 @@
     },
     "license": "MIT",
     "bin": {
-        "ts-node-to": "bin.js"
+        "ts-node-to": "bin.js",
+        "ts-node-transpile-only": "bin.js"
     },
     "dependencies": {},
     "devDependencies": {
