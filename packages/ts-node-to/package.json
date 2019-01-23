@@ -1,6 +1,6 @@
 {
     "name": "ts-node-to",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "`ts-node --transpile-only` for shebangs",
     "author": {
         "name": "Andrew Bradley",
