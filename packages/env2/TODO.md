@@ -30,3 +30,12 @@ if executable requires shell (is not .com nor .exe):
 else:
     run the command like normal
     TODO does rust's argument escaping work correctly?  Exact inverse of CommandLineToArgvW?
+
+
+On Windows, allow alternative shebang on line 3:
+
+    #!/usr/bin/env env2
+    #!<linux command goes here>
+    #!windows <windows command goes here>
+
+Like here: https://scalr-wiki.atlassian.net/wiki/spaces/docs/pages/1778334/Script+Shebang+Line

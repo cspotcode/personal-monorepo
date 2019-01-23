@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+//#!another shebang
+
+console.log('foo');

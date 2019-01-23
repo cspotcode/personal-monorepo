@@ -8,11 +8,19 @@
 line=1
 while read LINE; do
     if [ "$line" = 2 ]; then
-        # TODO validate that string starts with #!
+        # TODO validate that string starts with #! or //#!; extract accordingly
+        firstFour="${line:0:4}"
+        firstTwo="${line:0:2}"
 
-        # Parse second shebang line; trim leading #!
-        shebang="${line:2:9999}"
-        break
+        if [ "$firstTwo" = "#!" ] ; then
+            # Parse second shebang line; trim leading #!
+            shebang="${line:2:9999}"
+            break
+        else if [ "$firstFour" = "//#!" ] ; then
+            # Parse second shebang line; trim leading #!
+            shebang="${line:4:9999}"
+            break
+        fi
     fi
 
     # skip first shebang line
