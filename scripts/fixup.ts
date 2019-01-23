@@ -5,7 +5,7 @@ import minimatch from 'minimatch';
 import process from 'process';
 import Path from 'path';
 import outdent from 'outdent';
-import {template, mapValues, each, fromPairs, defaults} from 'lodash';
+import {assign, template, mapValues, each, fromPairs, defaults} from 'lodash';
 import {patchJsonFile, writeTextFile, readTextFile, tryFilterMap, readJsonFile} from '../packages/scripting-core/src/core';
 import { AssertionError } from 'assert';
 
@@ -69,6 +69,24 @@ function main() {
             writeTextFile(`.github/ISSUE_TEMPLATE/${ packageName }--${ templateName }.md`, templateFn({
                 name: packageName
             }));
+        });
+
+        patchJsonFile(`packages/${ packageName }/package.json`, (pkg) => {
+            defaults(pkg, {
+                license: "MIT",
+            });
+            assign(pkg, {
+                homepage: `https://github.com/cspotcode/personal-monorepo/tree/master/packages/${ packageName }`,
+                bugs: `https://github.com/cspotcode/personal-monorepo/issues?labels=P:${ packageName }`,
+                repository: {
+                    type: "git",
+                    url: "https://github.com/cspotcode/personal-monorepo.git"
+                },
+                author: {
+                    name: "Andrew Bradley",
+                    url: "https://cspotcode.com"
+                },
+            });
         });
     }
 

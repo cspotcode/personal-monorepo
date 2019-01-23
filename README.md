@@ -14,6 +14,14 @@ Could be used to periodically update them to the latest master.
 Although committing the latest revision to this monorepo isn't really important
 as long as my working tree has checkouts at the latest master.
 
+---
+
+Issue templates:
+
+https://github.com/cspotcode/personal-monorepo/issues/new?template=env2-shebang--bug-report.md
+https://github.com/cspotcode/personal-monorepo/issues/new?template=env2-shebang--bug-report.md
+
+TODO add pull request templates
 
 ---
 

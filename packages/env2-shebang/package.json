@@ -14,7 +14,7 @@
         "env"
     ],
     "homepage": "https://github.com/cspotcode/personal-monorepo/tree/master/packages/env2-shebang",
-    "bugs": "https://github.com/cspotcode/personal-monorepo/issues",
+    "bugs": "https://github.com/cspotcode/personal-monorepo/issues?labels=P:env2-shebang",
     "repository": {
         "type": "git",
         "url": "https://github.com/cspotcode/personal-monorepo.git"
