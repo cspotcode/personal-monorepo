@@ -1,8 +1,8 @@
 ---
-name: env2-shebang: Bug report
+name: 'env2-shebang: Bug report'
 about: Create a report to help us improve
 title: "[env2-shebang] "
-labels: env2-shebang
+labels: env2-shebang, bug
 assignees: ''
 
 ---
