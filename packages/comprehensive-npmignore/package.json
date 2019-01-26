@@ -1,0 +1,35 @@
+{
+  "name": "comprehensive-npmignore",
+  "version": "0.0.1",
+  "description": "Verify that everything is either explicitly excluded by npmignore or included by files array.",
+  "bin": {
+    "comprehensive-npmignore": "./index.js"
+  },
+  "personalMonoRepoMeta": {
+    "livesIn": "mono"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/cspotcode/personal-monorepo/tree/master/packages/comprehensive-npmignore",
+  "bugs": "https://github.com/cspotcode/personal-monorepo/issues?labels=P:comprehensive-npmignore",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cspotcode/personal-monorepo.git"
+  },
+  "author": {
+    "name": "Andrew Bradley",
+    "url": "https://cspotcode.com"
+  },
+  "scripts": {
+    "test": "./index.js"
+  },
+  "dependencies": {
+    "glob-gitignore": "^1.0.11"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "npmignore": [
+    "yarn.lock"
+  ]
+}
