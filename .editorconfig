@@ -9,7 +9,7 @@ indent_size = 4
 trim_trailing_whitespace = false
 insert_final_newline = true
 
-[package.json]
+[{package.json,tsconfig.json}]
 indent_size = 2
 
 [Makefile]

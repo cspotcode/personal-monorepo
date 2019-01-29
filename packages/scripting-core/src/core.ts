@@ -4,7 +4,7 @@ import * as shelljs from 'shelljs';
 import * as crossSpawn from 'cross-spawn';
 import * as child_process from 'child_process';
 import { resolve } from 'path';
-import {map, filter} from 'lodash';
+import {map, filter, escapeRegExp} from 'lodash';
 
 export function patchTextFile(path: string, cb: (v: string) => string) {
     const result = cb(readTextFile(path));
@@ -40,6 +40,21 @@ export function readTextFile(path: string) {
 
 export function writeTextFile(path: string, contents: string) {
     return fs.writeFileSync(path, contents);
+}
+
+/**
+ * Extract a span of text from a multiline file, delimited by startLine and endLine
+ * 
+ * Example delimiters:
+ * 
+ *     ###<NAME>
+ *     ###</NAME>
+ */
+export function extractDelimitedSpan(source: string, startLine: string, endLine: string) {
+    const regexp = new RegExp(
+        String.raw `(?:^|\n)${ escapeRegExp(startLine) }([\r\n](?:[\s\S]*[\r\n])?)${ escapeRegExp(endLine) }(?:[\r\n]|$)`
+    );
+    return source.match(regexp)![1];
 }
 
 function shelljsExecAsync(command: string, options?: shelljs.ExecOptions) {

@@ -1,22 +1,22 @@
 {
-    "dependencies": {
-        "@types/cross-spawn": "^6.0.0",
-        "@types/shelljs": "^0.8.1",
-        "cross-spawn": "^6.0.5",
-        "shelljs": "^0.8.3"
-    },
-    "personalMonoRepoMeta": {
-        "livesIn": "mono"
-    },
-    "license": "MIT",
-    "homepage": "https://github.com/cspotcode/personal-monorepo/tree/master/packages/scripting-core",
-    "bugs": "https://github.com/cspotcode/personal-monorepo/issues?labels=P:scripting-core",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/cspotcode/personal-monorepo.git"
-    },
-    "author": {
-        "name": "Andrew Bradley",
-        "url": "https://cspotcode.com"
-    }
+  "dependencies": {
+    "@types/cross-spawn": "^6.0.0",
+    "@types/shelljs": "^0.8.1",
+    "cross-spawn": "^6.0.5",
+    "shelljs": "^0.8.3"
+  },
+  "personalMonoRepoMeta": {
+    "livesIn": "mono"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/cspotcode/personal-monorepo/tree/master/packages/scripting-core",
+  "bugs": "https://github.com/cspotcode/personal-monorepo/issues?labels=P:scripting-core",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cspotcode/personal-monorepo.git"
+  },
+  "author": {
+    "name": "Andrew Bradley",
+    "url": "https://cspotcode.com"
+  }
 }
