@@ -16,6 +16,14 @@
             "path": "."
         },
         {
+            "name": "chainable-api",
+            "path": "packages/chainable-api"
+        },
+        {
+            "name": "comprehensive-npmignore",
+            "path": "packages/comprehensive-npmignore"
+        },
+        {
             "name": "env2-shebang",
             "path": "packages/env2-shebang"
         },
@@ -42,6 +50,14 @@
         {
             "name": "ts-node-to",
             "path": "packages/ts-node-to"
+        },
+        {
+            "name": "ts-wrapper",
+            "path": "packages/ts-wrapper"
+        },
+        {
+            "name": "tsc-to",
+            "path": "packages/tsc-to"
         },
         {
             "name": "typescript-toolbelt",

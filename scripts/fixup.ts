@@ -6,7 +6,7 @@ import process from 'process';
 import Path from 'path';
 import outdent from 'outdent';
 import {assign, template, mapValues, each, fromPairs, defaults} from 'lodash';
-import {patchJsonFile, writeTextFile, readTextFile, tryFilterMap, readJsonFile} from '../packages/scripting-core/src/core';
+import {patchJsonFile, writeTextFile, readTextFile, tryFilterMap, readJsonFile, extractDelimitedSpan, writeJsonFile} from '../packages/scripting-core/src/core';
 import { AssertionError } from 'assert';
 
 function main() {
@@ -16,24 +16,18 @@ function main() {
     const packageNames = glob.sync('*', {cwd: 'packages'}).filter(v => v !== '__template__');
 
     each(packageNames, (pkgName) => {
-        patchJsonFile(`packages/${ pkgName }/package.json`, (v) => {
-            defaults(v, {
-                personalMonoRepoMeta: {
-                    livesIn: 'TODO'
-                }
-            });
-        });
-    });
-
-    const packages: Record<string, {
-        personalMonoRepoMeta?: {
-            livesIn: 'mono' | 'external';
+        const _defaults = {
+            personalMonoRepoMeta: {
+                livesIn: 'TODO'
+            }
         }
-    }> = fromPairs(packageNames.map(name => {
-        return [name, readJsonFile(`packages/${ name }/package.json`)];
-    }));
-    each(packages, (pkg, name) => {
-        if(pkg.personalMonoRepoMeta!.livesIn == 'TODO' as any) throw new Error(`Fix ${name}'s package.json`);
+        try {
+            patchJsonFile(`packages/${ pkgName }/package.json`, (v) => {
+                defaults(v, _defaults);
+            }, {indentationLevel: 2});
+        } catch(e) {
+            writeJsonFile(`packages/${ pkgName }/package.json`, _defaults, 2);
+        }
     });
 
     patchJsonFile('workspace.code-workspace', (v) => {
@@ -47,6 +41,17 @@ function main() {
                 path: `packages/${ v }`,
             }))
         ];
+    });
+
+    const packages: Record<string, {
+        personalMonoRepoMeta?: {
+            livesIn: 'mono' | 'external';
+        }
+    }> = fromPairs(packageNames.map(name => {
+        return [name, readJsonFile(`packages/${ name }/package.json`)];
+    }));
+    each(packages, (pkg, name) => {
+        if(pkg.personalMonoRepoMeta!.livesIn == 'TODO' as any) throw new Error(`Fix ${name}'s package.json`);
     });
 
     patchJsonFile('lerna.json', (v) => {
@@ -87,20 +92,20 @@ function main() {
                     url: "https://cspotcode.com"
                 },
             });
-        });
+        }, {indentationLevel: 2});
     }
 
     const npmScriptsPath = './scripts/npm-scripts.sh';
     const npmScriptsSh = readTextFile(npmScriptsPath);
     const npmScripts = tryFilterMap(
-        npmScriptsSh.match(/###<NAMES>\n([\s\S]*)###<\/NAMES>/)![1].split('\n'),
+        extractDelimitedSpan(npmScriptsSh, '###<NAMES>', '###</NAMES>').split('\n'),
         v => v.match(/^(\S+)\)$/)![1]
     );
     patchJsonFile('package.json', (pkg) => {
         // Add missing scripts
         each(npmScripts, s => {
             if(!pkg.scripts[s])
-                pkg.scripts[s] = npmScriptsPath;
+                pkg.scripts[s] = `# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n${ npmScriptsPath }`;
         });
         // remove old scripts that where removed from npm-scripts.sh
         each(pkg.scripts, (v, k) => {
@@ -109,6 +114,9 @@ function main() {
             }
         });
     });
+
+    // TODO enforce LICENSE files and package.json props
+    // TODO enforce CONTRIBUTING file?
 }
 
 if(require.main === module) {

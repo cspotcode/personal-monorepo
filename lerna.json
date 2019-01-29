@@ -12,6 +12,8 @@
         }
     },
     "packages": [
+        "packages/chainable-api",
+        "packages/comprehensive-npmignore",
         "packages/env2-shebang",
         "packages/html-comment-preprocessor",
         "packages/ignore-preprocessor",
@@ -19,6 +21,8 @@
         "packages/preprocessor",
         "packages/scripting-core",
         "packages/ts-node-to",
+        "packages/ts-wrapper",
+        "packages/tsc-to",
         "packages/typescript-toolbelt"
     ]
 }

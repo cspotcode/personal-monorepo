@@ -1,6 +1,7 @@
 {
     "scripts": {
-        "fixup": "./scripts/npm-scripts.sh"
+        "fixup": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./scripts/npm-scripts.sh",
+        "new-package": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./scripts/npm-scripts.sh"
     },
     "devDependencies": {
         "@types/glob": "^7.1.1",

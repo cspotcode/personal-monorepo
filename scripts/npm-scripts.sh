@@ -25,6 +25,11 @@ fixup)
     ./scripts/fixup.ts
     ;;
 
+new-package)
+    mkdir packages/$1
+    npm run fixup
+    ;;
+
 ###</NAMES>
 *)
     echo "Unrecognized script: $script"

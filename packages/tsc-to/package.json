@@ -1,0 +1,40 @@
+{
+  "name": "tsc-to",
+  "version": "0.0.0",
+  "bin": {
+    "tsc-to": "dist/bin/tsc-to.js",
+    "tsc-transpile-only": "dist/bin/tsc-to.js"
+  },
+  "personalMonoRepoMeta": {
+    "livesIn": "mono"
+  },
+  "dependencies": {
+    "@ts-tools/service": "^1.0.4"
+  },
+  "devDependencies": {
+    "byots": "^2.9.0-dev.20180411.1.10"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/cspotcode/personal-monorepo/tree/master/packages/tsc-to",
+  "bugs": "https://github.com/cspotcode/personal-monorepo/issues?labels=P:tsc-to",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cspotcode/personal-monorepo.git"
+  },
+  "author": {
+    "name": "Andrew Bradley",
+    "url": "https://cspotcode.com"
+  },
+  "keywords": [
+    "TypeScript",
+    "transpile-only"
+  ],
+  "files": [
+    "dist",
+    "src",
+    "tsconfig.json"
+  ],
+  "npmignore": [
+    "yarn.lock"
+  ]
+}
