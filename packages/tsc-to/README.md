@@ -1,8 +1,8 @@
 TypeScript's command-line compiler `tsc` without type-checking.  Benefits:
 
-- a) Still checks and reports syntax errors.
-- a) Exit code indicates syntax errors only; is not affected by type errors.
-- b) Faster, since it skips typechecking and doesn't need to parse .d.ts files or perform import resolution.
+- Still checks and reports syntax errors.
+- Exit code indicates syntax errors only; is not affected by type errors.
+- Faster, since it skips typechecking and doesn't need to parse .d.ts files or perform import resolution.
 
 Lots of TypeScript tools have an option to skip typechecking. ([ts-node](https://github.com/TypeStrong/ts-node),
 [ts-loader](https://github.com/TypeStrong/ts-loader), [ts-jest](https://kulshekhar.github.io/ts-jest/), etc)  I'm not aware of one that performs command-line
