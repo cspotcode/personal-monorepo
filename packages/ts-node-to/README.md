@@ -10,6 +10,8 @@ or the more explicit alias:
 
 *Note: you must manually install ts-node as a dependency.  This package does not declare it as a dependency.*
 
+*See also: [tsc-to](https://github.com/cspotcode/personal-monorepo/tree/master/packages/tsc-to)*
+
 # Why?
 
 Shebangs don't let you specify environment variables or CLI parameters, which means there's no
