@@ -1,6 +1,6 @@
 {
   "name": "tsc-to",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "bin": {
     "tsc-to": "dist/bin/tsc-to.js",
     "tsc-transpile-only": "dist/bin/tsc-to.js"
