@@ -1,6 +1,6 @@
 {
   "name": "tsc-to",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "bin": {
     "tsc-to": "dist/bin/tsc-to.js",
     "tsc-transpile-only": "dist/bin/tsc-to.js"
@@ -12,6 +12,11 @@
     "@ts-tools/service": "^1.0.4"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-typescript": "^7.1.0",
     "byots": "^2.9.0-dev.20180411.1.10"
   },
   "license": "MIT",
@@ -35,6 +40,11 @@
     "tsconfig.json"
   ],
   "npmignore": [
-    "yarn.lock"
+    ".gitignore",
+    "babel-out",
+    "babel.config.js",
+    "BENCHMARK.md",
+    "yarn.lock",
+    "yarn-error.log"
   ]
 }
