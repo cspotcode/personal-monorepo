@@ -1,6 +1,6 @@
 {
   "name": "tsc-to",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "bin": {
     "tsc-to": "dist/bin/tsc-to.js",
     "tsc-transpile-only": "dist/bin/tsc-to.js"
@@ -34,6 +34,9 @@
     "TypeScript",
     "transpile-only"
   ],
+  "scripts": {
+    "build": "tsc -p ."
+  },
   "files": [
     "dist",
     "src",
