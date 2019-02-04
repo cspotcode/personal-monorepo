@@ -1,7 +1,12 @@
 {
     "scripts": {
         "fixup": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./scripts/npm-scripts.sh",
-        "new-package": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./scripts/npm-scripts.sh"
+        "new-package": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./scripts/npm-scripts.sh",
+        "focus": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./scripts/npm-scripts.sh",
+        "package-command": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./scripts/npm-scripts.sh",
+        "version-this-package": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./scripts/npm-scripts.sh",
+        "version-package": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./scripts/npm-scripts.sh",
+        "_version-this-package": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./scripts/npm-scripts.sh"
     },
     "devDependencies": {
         "@types/glob": "^7.1.1",

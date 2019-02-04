@@ -1,0 +1,36 @@
+{
+  "name": "node-module-hooks",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -r dist",
+    "build": "tsc -p .",
+    "test": "comprehensive-npmignore"
+  },
+  "dependencies": {},
+  "personalMonoRepoMeta": {
+    "livesIn": "mono"
+  },
+  "homepage": "https://github.com/cspotcode/personal-monorepo/tree/master/packages/node-module-hooks",
+  "bugs": "https://github.com/cspotcode/personal-monorepo/issues?labels=P:node-module-hooks",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cspotcode/personal-monorepo.git"
+  },
+  "author": {
+    "name": "Andrew Bradley",
+    "url": "https://cspotcode.com"
+  },
+  "files": [
+    "src",
+    "dist",
+    "tsconfig.json"
+  ],
+  "npmignore": [
+    "TODO.md",
+    "example",
+    "yarn.lock"
+  ]
+}

@@ -18,6 +18,7 @@
         "packages/html-comment-preprocessor",
         "packages/ignore-preprocessor",
         "packages/mocha-modern",
+        "packages/node-module-hooks",
         "packages/preprocessor",
         "packages/scripting-core",
         "packages/ts-node-to",

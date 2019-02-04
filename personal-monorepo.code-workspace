@@ -40,6 +40,10 @@
             "path": "packages/mocha-modern"
         },
         {
+            "name": "node-module-hooks",
+            "path": "packages/node-module-hooks"
+        },
+        {
             "name": "preprocessor",
             "path": "packages/preprocessor"
         },
@@ -63,5 +67,6 @@
             "name": "typescript-toolbelt",
             "path": "packages/typescript-toolbelt"
         }
-    ]
+    ],
+    "_folders": []
 }

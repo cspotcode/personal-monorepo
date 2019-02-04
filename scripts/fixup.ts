@@ -9,6 +9,8 @@ import {assign, template, mapValues, each, fromPairs, defaults} from 'lodash';
 import {patchJsonFile, writeTextFile, readTextFile, tryFilterMap, readJsonFile, extractDelimitedSpan, writeJsonFile} from '../packages/scripting-core/src/core';
 import { AssertionError } from 'assert';
 
+export const workspaceFilename = 'personal-monorepo.code-workspace';
+
 function main() {
 
     process.chdir(Path.join(__dirname, '..'));
@@ -30,13 +32,13 @@ function main() {
         }
     });
 
-    patchJsonFile('workspace.code-workspace', (v) => {
+    patchJsonFile(workspaceFilename, (v) => {
         v.folders = [
             {
                 name: "__ROOT__",
                 path: ".",
             },
-            ...packageNames.map(v => ({
+            ...packageNames.filter(n => !v._folders.some(v => v.name === n)).map(v => ({
                 name: `${ v }`,
                 path: `packages/${ v }`,
             }))
@@ -66,9 +68,9 @@ function main() {
     for(const packageName of packageNames) {
         if(packages[packageName].personalMonoRepoMeta!.livesIn === 'external') continue;
 
-        writeTextFile(`packages/${ packageName }/.npmrc`, outdent `
-            version-tag-prefix="${ readJsonFile(`./packages/${ packageName }/package.json`).name }@"
-        `);
+        // writeTextFile(`packages/${ packageName }/.npmrc`, outdent `
+        //     version-tag-prefix="${ readJsonFile(`./packages/${ packageName }/package.json`).name }@"
+        // `);
 
         each(issueTemplates, (templateFn, templateName) => {
             writeTextFile(`.github/ISSUE_TEMPLATE/${ packageName }--${ templateName }.md`, templateFn({
