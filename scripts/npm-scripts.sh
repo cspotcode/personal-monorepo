@@ -38,7 +38,7 @@ focus)
 package-command)
     package="$1"
     shift
-    pushd "./packages/$1"
+    pushd "./packages/$package"
     "$@"
     ;;
 
@@ -57,10 +57,10 @@ version-package)
     git diff --exit-code package.json
 
     # Bump version
-    yarn run package-command -- $package yarn version "$@"
+    yarn run package-command $package yarn version "$@"
 
     # grab version #
-    version="$( yarn run package-command -- node -p "require('./package.json').version" )"
+    version="$( yarn run package-command "$package" node -p "require('./package.json').version" )"
 
     git add "./packages/$package/package.json"
     git commit -m "$package@$version"

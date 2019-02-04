@@ -68,9 +68,12 @@ function main() {
     for(const packageName of packageNames) {
         if(packages[packageName].personalMonoRepoMeta!.livesIn === 'external') continue;
 
-        // writeTextFile(`packages/${ packageName }/.npmrc`, outdent `
-        //     version-tag-prefix="${ readJsonFile(`./packages/${ packageName }/package.json`).name }@"
-        // `);
+        // Might include a scope, which we want to have in the git tag: @foo/whatever
+        const name = readJsonFile(`./packages/${ packageName }/package.json`).name;
+        writeTextFile(`packages/${ packageName }/.yarnrc`, outdent `
+            version-tag-prefix="${ name }@"
+            version-git-message "${ name }@%s"
+        `);
 
         each(issueTemplates, (templateFn, templateName) => {
             writeTextFile(`.github/ISSUE_TEMPLATE/${ packageName }--${ templateName }.md`, templateFn({
