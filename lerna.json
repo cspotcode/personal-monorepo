@@ -13,6 +13,7 @@
     },
     "packages": [
         "packages/chainable-api",
+        "packages/codegen",
         "packages/comprehensive-npmignore",
         "packages/env2-shebang",
         "packages/html-comment-preprocessor",

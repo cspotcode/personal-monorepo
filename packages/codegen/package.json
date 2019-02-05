@@ -1,0 +1,33 @@
+{
+  "personalMonoRepoMeta": {
+    "livesIn": "mono"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "codegen": "./dist/index.js"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/cspotcode/personal-monorepo/tree/master/packages/codegen",
+  "bugs": "https://github.com/cspotcode/personal-monorepo/issues?labels=P:codegen",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cspotcode/personal-monorepo.git"
+  },
+  "author": {
+    "name": "Andrew Bradley",
+    "url": "https://cspotcode.com"
+  },
+  "name": "codegen",
+  "dependencies": {
+    "@types/mkdirp": "^0.5.2",
+    "glob": "^7.1.3",
+    "mkdirp": "^0.5.1",
+    "node-module-hooks": "^0.0.1"
+  },
+  "scripts": {
+    "clean": "rm -r dist",
+    "build": "tsc -p .",
+    "test": "comprehensive-npmignore"
+  }
+}

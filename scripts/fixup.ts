@@ -1,13 +1,33 @@
 #!/usr/bin/env ts-node-to
 import fs from 'fs';
 import glob from 'glob';
-import minimatch from 'minimatch';
 import process from 'process';
 import Path from 'path';
 import outdent from 'outdent';
 import {assign, template, mapValues, each, fromPairs, defaults} from 'lodash';
 import {patchJsonFile, writeTextFile, readTextFile, tryFilterMap, readJsonFile, extractDelimitedSpan, writeJsonFile} from '../packages/scripting-core/src/core';
-import { AssertionError } from 'assert';
+
+/**
+ * TODO Extra stuff to emit:
+ * package.json
+ *   main
+ *   types
+ *   dependency on tslib
+ * tsconfig.json
+ *   target
+ *   module
+ *   lib
+ *   outDir
+ *   rootDir
+ *   downlevelIteration
+ *   importHelpers
+ *   sourceMap
+ *   declaration
+ *   declarationMap
+ *   newline
+ * 
+ * EMIT JSON WITH TRAILING NEWLINE
+ */
 
 export const workspaceFilename = 'personal-monorepo.code-workspace';
 
@@ -18,11 +38,12 @@ function main() {
     const packageNames = glob.sync('*', {cwd: 'packages'}).filter(v => v !== '__template__');
 
     each(packageNames, (pkgName) => {
+        const isGit = fs.existsSync(`packages/${pkgName}/.git`);
         const _defaults = {
             personalMonoRepoMeta: {
-                livesIn: 'TODO'
+                livesIn: isGit ? 'external' : 'mono'
             }
-        }
+        };
         try {
             patchJsonFile(`packages/${ pkgName }/package.json`, (v) => {
                 defaults(v, _defaults);
@@ -66,14 +87,8 @@ function main() {
     }, (_1, k) => template(readTextFile(`.github/ISSUE_TEMPLATE/__template__--${ k }.md`)));
 
     for(const packageName of packageNames) {
+        // TODO assert that livesIn matches presence of a .git directory
         if(packages[packageName].personalMonoRepoMeta!.livesIn === 'external') continue;
-
-        // Might include a scope, which we want to have in the git tag: @foo/whatever
-        const name = readJsonFile(`./packages/${ packageName }/package.json`).name;
-        writeTextFile(`packages/${ packageName }/.yarnrc`, outdent `
-            version-tag-prefix="${ name }@"
-            version-git-message "${ name }@%s"
-        `);
 
         each(issueTemplates, (templateFn, templateName) => {
             writeTextFile(`.github/ISSUE_TEMPLATE/${ packageName }--${ templateName }.md`, templateFn({
@@ -83,7 +98,21 @@ function main() {
 
         patchJsonFile(`packages/${ packageName }/package.json`, (pkg) => {
             defaults(pkg, {
+                name: packageName,
+                version: '0.0.0',
                 license: "MIT",
+                main: 'dist/index.js',
+                types: 'dist/index.d.ts',
+                files: [
+                    "dist",
+                    "src",
+                    "tsconfig.json",
+                ],
+                npmignore: [
+                    ".yarnrc",
+                    "yarn.lock",
+                    "yarn-error.log"
+                ]
             });
             assign(pkg, {
                 homepage: `https://github.com/cspotcode/personal-monorepo/tree/master/packages/${ packageName }`,
@@ -98,6 +127,14 @@ function main() {
                 },
             });
         }, {indentationLevel: 2});
+
+        // Might include a scope, which we want to have in the git tag: @foo/whatever
+        const name = readJsonFile(`./packages/${ packageName }/package.json`).name;
+        writeTextFile(`packages/${ packageName }/.yarnrc`, outdent `
+            version-tag-prefix "${ name }@"
+            version-git-message "${ name }@%s"
+        `);
+
     }
 
     const npmScriptsPath = './scripts/npm-scripts.sh';
