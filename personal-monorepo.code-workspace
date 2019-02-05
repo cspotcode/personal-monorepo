@@ -20,6 +20,10 @@
             "path": "packages/chainable-api"
         },
         {
+            "name": "codegen",
+            "path": "packages/codegen"
+        },
+        {
             "name": "comprehensive-npmignore",
             "path": "packages/comprehensive-npmignore"
         },

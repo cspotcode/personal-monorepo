@@ -4,6 +4,7 @@ import {identity, escapeRegExp, uniq, flatten, map} from 'lodash';
 import Path from 'path';
 import fs from 'fs';
 import assert from 'assert';
+import __tsNode from 'ts-node';
 
 export class CodeGenApi {
     constructor(opts: {
@@ -76,11 +77,20 @@ const defaultConfiguration = {
     outDir: 'src',
     include: ["src/**"],
     exclude: new Array<string>(),
+    /** Modules to preload TODO implement */
+    require: [] as string | Array<string>,
     extensions: {
         '.generate.ts': ['typescript', '.ts']
     } as Record<string, [string, string]>,
     renderers: {
         typescript: (api: CodeGenApi) => {
+
+            // TODO Load ts-node on-demand
+            // TODO read settings from tsconfig
+            (require('ts-node') as typeof __tsNode).register({
+                transpileOnly: true
+            });
+
             const exports = require(api.templateFilenameAbs);
             let fn;
             if(exports && typeof exports.default === 'function') {
