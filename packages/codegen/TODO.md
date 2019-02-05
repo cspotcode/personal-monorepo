@@ -1,3 +1,9 @@
+Add .js, .tsx, and .jsx as extensions.
+
+Rethink file extensions?
+.template.ts and .generated.ts?
+    This allows .gitignore to omit the generated code
+
 Use cosmic config for each setup.
 
     rootDir = "."

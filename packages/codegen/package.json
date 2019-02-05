@@ -45,5 +45,6 @@
     "TODO.md",
     "yarn.lock",
     "yarn-error.log"
-  ]
+  ],
+  "version": "0.0.1"
 }
