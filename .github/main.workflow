@@ -6,5 +6,5 @@ workflow "Run Tests" {
 action "yarn version" {
   uses = "actions/npm@master"
   runs = "yarn"
-  args = "version"
+  args = ["shell", "ls", "-al"]
 }
