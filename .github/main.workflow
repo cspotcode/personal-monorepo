@@ -1,6 +1,6 @@
 workflow "Run Tests" {
   on = "push"
-  resolves = ["yarn version"]
+  resolves = ["Run arbitrary commands"]
 }
 
 action "Run arbitrary commands" {
