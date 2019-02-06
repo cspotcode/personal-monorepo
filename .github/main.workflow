@@ -6,5 +6,5 @@ workflow "Run Tests" {
 action "Run arbitrary commands" {
   uses = "actions/npm@master"
   runs = "yarn"
-  args = ["shell", "exit", "78"]
+  args = ["exit", "78"]
 }

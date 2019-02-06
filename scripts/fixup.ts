@@ -139,6 +139,7 @@ function main() {
     }
 
     const npmScriptsPath = './scripts/npm-scripts.sh';
+    const script = `# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n${ npmScriptsPath }`;
     const npmScriptsSh = readTextFile(npmScriptsPath);
     const npmScripts = tryFilterMap(
         extractDelimitedSpan(npmScriptsSh, '###<NAMES>', '###</NAMES>').split('\n'),
@@ -148,11 +149,11 @@ function main() {
         // Add missing scripts
         each(npmScripts, s => {
             if(!pkg.scripts[s])
-                pkg.scripts[s] = `# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n${ npmScriptsPath }`;
+                pkg.scripts[s] = script;
         });
         // remove old scripts that where removed from npm-scripts.sh
         each(pkg.scripts, (v, k) => {
-            if(v === npmScriptsPath && !npmScripts.includes(k)) {
+            if(v === script && !npmScripts.includes(k)) {
                 delete pkg.scripts[k];
             }
         });

@@ -46,6 +46,10 @@ shell)
     exec "$@"
     ;;
 
+exit)
+    exit "$@"
+    ;;
+
 # _version-this-package)
 #     pushd ../..
 #     yarn run version-package "$npm_package_name" "$@"

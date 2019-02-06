@@ -4,7 +4,8 @@
         "new-package": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./scripts/npm-scripts.sh",
         "focus": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./scripts/npm-scripts.sh",
         "package-command": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./scripts/npm-scripts.sh",
-        "shell": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./scripts/npm-scripts.sh"
+        "shell": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./scripts/npm-scripts.sh",
+        "exit": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./scripts/npm-scripts.sh"
     },
     "devDependencies": {
         "@types/glob": "^7.1.1",
