@@ -6,20 +6,20 @@ workflow "Run Tests" {
 action "Run Before" {
     uses = "actions/npm@master"
     runs = "./scripts/npm-scripts.sh"
-    args = ["shell", "echo", "hello world"]
+    args = ["shell", "touch", "/github/foobar"]
 }
 action "Run 1" {
     needs = "Run Before"
     uses = "actions/npm@master"
     runs = "./scripts/npm-scripts.sh"
-    args = ["exit", "78"]
+    args = "shell ls -al /github"
 }
 
 action "Run 2" {
     needs = "Run Before"
     uses = "actions/npm@master"
     runs = "./scripts/npm-scripts.sh"
-    args = ["exit", "0"]
+    args = "shell ls -al /github"
 }
 
 action "Final" {
