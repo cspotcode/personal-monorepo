@@ -19,7 +19,7 @@ action "Run 2" {
     needs = "Run Before"
     uses = "actions/npm@master"
     runs = "./scripts/npm-scripts.sh"
-    args = "shell ls -al /github"
+    args = "shell cat $GITHUB_EVENT_PATH"
 }
 
 action "Final" {
