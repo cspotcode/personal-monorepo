@@ -3,8 +3,8 @@ workflow "Run Tests" {
   resolves = ["yarn version"]
 }
 
-action "yarn version" {
+action "Run arbitrary commands" {
   uses = "actions/npm@master"
   runs = "yarn"
-  args = ["shell", "ls", "-al"]
+  args = ["shell", "ls", "-al", ";", "exit", "78"]
 }
