@@ -19,7 +19,7 @@ action "Run 2" {
     needs = "Run Before"
     uses = "actions/npm@master"
     runs = "./scripts/npm-scripts.sh"
-    args = "shell cat /github/workflow/event.json"
+    args = "shell node -p JSON.stringify(require(\"/github/workflow/event.json\"),null,4)"
 }
 
 action "Final" {
