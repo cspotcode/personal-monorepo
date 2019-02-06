@@ -22,7 +22,7 @@ export function patchJsonFile(path: string, cb: (v: any) => any, {
     return patchTextFile(path, (text) => {
         const v = JSON5.parse(text);
         const response = cb(v);
-        return JSON.stringify(response === undefined ? v : response, null, indentationLevel);
+        return JSON.stringify(response === undefined ? v : response, null, indentationLevel) + '\n';
     });
 }
 
@@ -31,7 +31,7 @@ export function readJsonFile(path: string, parser: JsonParserName = 'JSON5') {
     return JSON5.parse(readTextFile(path));
 }
 export function writeJsonFile(path: string, value: any, indentationLevel = 4) {
-    return writeTextFile(path, JSON.stringify(value, null, 4));
+    return writeTextFile(path, JSON.stringify(value, null, 4) + '\n');
 }
 
 export function readTextFile(path: string) {

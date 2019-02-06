@@ -25,6 +25,7 @@ import {patchJsonFile, writeTextFile, readTextFile, tryFilterMap, readJsonFile, 
  *   declaration
  *   declarationMap
  *   newline
+ *   stripInternal
  * 
  * EMIT JSON WITH TRAILING NEWLINE
  */
