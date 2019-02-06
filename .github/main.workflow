@@ -19,7 +19,7 @@ action "Run 2" {
     needs = "Run Before"
     uses = "actions/npm@master"
     runs = "./scripts/npm-scripts.sh"
-    args = "shell cat $GITHUB_EVENT_PATH"
+    args = "shell cat /github/workflow/event.json"
 }
 
 action "Final" {
