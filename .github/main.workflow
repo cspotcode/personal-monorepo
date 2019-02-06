@@ -6,7 +6,7 @@ workflow "Run Tests" {
 action "Run Before" {
     uses = "actions/npm@master"
     runs = "./scripts/npm-scripts.sh"
-    args = ["echo", "hello world"]
+    args = ["shell", "echo", "hello world"]
 }
 action "Run 1" {
     needs = "Run Before"
