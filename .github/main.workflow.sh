@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 printf "\n\n\n================================================\n\n\n"
-date --utc
 set -euxo pipefail
 
 script="$1"
