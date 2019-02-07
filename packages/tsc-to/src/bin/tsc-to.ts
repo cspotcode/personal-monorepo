@@ -1,7 +1,11 @@
 #!/usr/bin/env node
-import __ts from 'typescript';
-const ts = __ts as any as typeof __byots;
-import __byots from 'byots';
+
+// byots is no longer required; leaving this for convenience
+// import __ts from 'typescript';
+// const ts = __ts as any as typeof __byots;
+// import __byots from 'byots';
+
+import ts from 'typescript';
 import { TypeScriptService } from '@ts-tools/service';
 import fs from 'fs';
 import Path from 'path';
