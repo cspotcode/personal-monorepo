@@ -44,6 +44,7 @@ git add --all
 git commit -m "Template"
 popd
 git remote add template ./monorepo-template
+git fetch template
 git push -f origin template/master:template
 
 # if ! git diff --cached --quiet ; then
