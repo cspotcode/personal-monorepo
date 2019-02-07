@@ -20,9 +20,14 @@ skip-template-branch)
     ;;
 
 test)
+    yarn
+    lerna bootstrap
+    lerna run build
+    lerna run test
     ;;
 
 docs)
+    lerna run docs
     ;;
 
 shell)
@@ -33,6 +38,7 @@ exit)
     exit "$@"
     ;;
 
+###</NAMES>
 *)
     echo "Unrecognized script: $script"
     exit 1
