@@ -21,9 +21,12 @@ gatekeeper)
     fi
     ;;
 
-build)
+bootstrap)
     yarn
     lerna bootstrap
+    ;;
+
+build)
     lerna run build
     ;;
 
