@@ -1,38 +1,31 @@
 workflow "Tests, docs, etc" {
     on = "push"
-    resolves = ["Final"]
+    resolves = ["Test", "Docs"]
 }
 
-action "Skip template branch" {
+action "Gatekeeper" {
     uses = "actions/npm@master"
     runs = "./.github/main.workflow.sh"
-    args = "skip-template-branch"
+    args = "gatekeeper"
 }
 
-action "Run Before" {
-    needs = "Skip template branch"
+action "Build" {
+    needs = "Gatekeeper"
     uses = "actions/npm@master"
     runs = "./.github/main.workflow.sh"
-    args = "shell touch /github/home"
+    args = "build"
 }
 
-action "Run 1" {
-    needs = "Run Before"
+action "Test" {
+    needs = "Build"
     uses = "actions/npm@master"
-    runs = "./scripts/npm-scripts.sh"
-    args = "shell ls -al /github/home"
+    runs = "./.github/main.workflow.sh"
+    args = "test"
 }
 
-action "Run 2" {
-    needs = "Run Before"
+action "Docs" {
+    needs = "Build"
     uses = "actions/npm@master"
-    runs = "./scripts/npm-scripts.sh"
-    args = "shell node -p JSON.stringify(require(\"/github/workflow/event.json\"),null,4)"
-}
-
-action "Final" {
-    needs = ["Run 1", "Run 2"]
-    uses = "actions/npm@master"
-    runs = "./scripts/npm-scripts.sh"
-    args = ["exit", "0"]
+    runs = "./.github/main.workflow.sh"
+    args = "docs"
 }
