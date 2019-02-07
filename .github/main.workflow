@@ -1,6 +1,6 @@
 workflow "Tests, docs, etc" {
     on = "push"
-    resolves = ["Test", "Docs"]
+    resolves = ["Test", "Docs", "Publish monorepo template"]
 }
 
 action "Gatekeeper" {
