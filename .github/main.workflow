@@ -35,4 +35,5 @@ action "Publish monorepo template" {
     uses = "actions/npm@master"
     runs = "./.github/main.workflow.sh"
     args = "publish-monorepo-template"
+    secrets = ["GITHUB_TOKEN"]
 }
