@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+printf "\n\n\n================================================\n\n\n"
 set -euxo pipefail
 
 script="$1"
