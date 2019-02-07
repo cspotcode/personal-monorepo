@@ -50,6 +50,10 @@ exit)
     exit "$@"
     ;;
 
+lerna)
+    lerna "$@"
+    ;;
+
 # _version-this-package)
 #     pushd ../..
 #     yarn run version-package "$npm_package_name" "$@"

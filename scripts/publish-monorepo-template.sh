@@ -26,6 +26,7 @@ function allFiles() {
         -name '__template*' -print
 }
 
+mkdir ./monorepo-template || true
 [ "./monorepo-template/*" != './monorepo-template/*' ] && rm -r monorepo-template/* monorepo-template/.*
 echo "Copying files to ./monorepo-template..."
 allFiles | while read -r line ; do
@@ -36,3 +37,19 @@ done
 echo "fixup..."
 pushd ./monorepo-template > /dev/null
 yarn fixup
+mv ./.github/main.workflow ./.github/main.workflow__REMOVE_THIS_SUFFIX__
+git init
+git config user.name "Andrew Bradley"
+git config user.email "cspotcode@gmail.com"
+git remote add local ../
+git fetch local refs/remotes/origin/template
+git reset FETCH_HEAD
+git add --all
+git commit -m "Update template"
+popd
+git remote add template ./monorepo-template
+git fetch template master
+git push -f origin refs/remotes/template/master:refs/heads/template
+
+# if ! git diff --cached --quiet ; then
+# fi
