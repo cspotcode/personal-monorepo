@@ -1,0 +1,10 @@
+[submodule "packages/mocha-modern"]
+	path = packages/mocha-modern
+	url = https://github.com/cspotcode/mocha-modern
+
+[submodule "packages/typescript-toolbelt"]
+	path = packages/typescript-toolbelt
+	url = https://github.com/cspotcode/typescript-toolbelt
+[submodule "packages/preprocessor"]
+	path = packages/preprocessor
+	url = https://github.com/cspotcode/preprocessor
