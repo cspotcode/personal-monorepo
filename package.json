@@ -24,6 +24,7 @@
     "lodash": "^4.17.11",
     "minimatch": "^3.0.4",
     "outdent": "^0.7.0",
+    "ts-node-to": "^0.0.2",
     "tslib": "^1.9.3",
     "typescript": "^3.2.2",
     "xregexp": "^4.2.0"
