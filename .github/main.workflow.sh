@@ -36,7 +36,11 @@ docs)
     ;;
 
 publish-monorepo-template)
-    ./scripts/publish-monorepo-template.sh
+    if [ "$GITHUB_REF" = "refs/heads/master" ] ; then
+        ./scripts/publish-monorepo-template.sh
+    else
+        echo "Not publishing template because this is not the master branch"
+    fi
     ;;
 
 shell)
