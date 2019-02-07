@@ -11,6 +11,9 @@
   "dependencies": {
     "@ts-tools/service": "^1.0.4"
   },
+  "peerDependencies": {
+    "typescript": "*"
+  },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
@@ -35,7 +38,8 @@
     "transpile-only"
   ],
   "scripts": {
-    "build": "tsc --build --verbose"
+    "build": "tsc --build --verbose",
+    "test": "../../scripts/package-npm-scripts.sh"
   },
   "files": [
     "dist",
