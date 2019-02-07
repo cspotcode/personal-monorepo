@@ -49,5 +49,7 @@
     "BENCHMARK.md",
     "yarn.lock",
     "yarn-error.log"
-  ]
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts"
 }
