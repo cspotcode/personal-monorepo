@@ -19,10 +19,13 @@ gatekeeper)
     fi
     ;;
 
-test)
+build)
     yarn
     lerna bootstrap
     lerna run build
+    ;;
+
+test)
     lerna run test
     ;;
 
