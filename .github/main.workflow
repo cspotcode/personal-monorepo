@@ -4,42 +4,42 @@ workflow "Tests, docs, etc" {
 }
 
 action "Gatekeeper" {
-    uses = "./.github/workflow-image@master"
+    uses = "./.github/workflow-image"
     runs = "./.github/main.workflow.sh"
     args = "gatekeeper"
 }
 
 action "Bootstrap" {
     needs = "Gatekeeper"
-    uses = "./.github/workflow-image@master"
+    uses = "./.github/workflow-image"
     runs = "./.github/main.workflow.sh"
     args = "bootstrap"
 }
 
 action "Build" {
     needs = "Bootstrap"
-    uses = "./.github/workflow-image@master"
+    uses = "./.github/workflow-image"
     runs = "./.github/main.workflow.sh"
     args = "build"
 }
 
 action "Test" {
     needs = "Build"
-    uses = "./.github/workflow-image@master"
+    uses = "./.github/workflow-image"
     runs = "./.github/main.workflow.sh"
     args = "test"
 }
 
 action "Docs" {
     needs = "Build"
-    uses = "./.github/workflow-image@master"
+    uses = "./.github/workflow-image"
     runs = "./.github/main.workflow.sh"
     args = "docs"
 }
 
 action "Publish monorepo template" {
     needs = "Bootstrap"
-    uses = "./.github/workflow-image@master"
+    uses = "./.github/workflow-image"
     runs = "./.github/main.workflow.sh"
     args = "publish-monorepo-template"
     secrets = ["GITHUB_TOKEN"]
