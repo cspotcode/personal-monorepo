@@ -10,6 +10,7 @@ action "Skip template branch" {
 }
 
 action "Run Before" {
+    needs = "Skip template branch"
     uses = "actions/npm@master"
     runs = "./.github/main.workflow.sh"
     args = "shell touch /github/home"
