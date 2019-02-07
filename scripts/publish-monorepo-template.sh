@@ -26,6 +26,7 @@ function allFiles() {
         -name '__template*' -print
 }
 
+mkdir ./monorepo-template || true
 [ "./monorepo-template/*" != './monorepo-template/*' ] && rm -r monorepo-template/* monorepo-template/.*
 echo "Copying files to ./monorepo-template..."
 allFiles | while read -r line ; do
