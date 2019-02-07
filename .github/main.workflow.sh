@@ -35,6 +35,10 @@ docs)
     lerna run docs
     ;;
 
+publish-monorepo-template)
+    ./scripts/publish-monorepo-template.sh
+    ;;
+
 shell)
     exec "$@"
     ;;

@@ -29,3 +29,10 @@ action "Docs" {
     runs = "./.github/main.workflow.sh"
     args = "docs"
 }
+
+action "Publish monorepo template" {
+    needs = "Gatekeeper"
+    uses = "actions/npm@master"
+    runs = "./.github/main.workflow.sh"
+    args = "publish-monorepo-template"
+}
