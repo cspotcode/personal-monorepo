@@ -3,11 +3,18 @@ workflow "Tests, docs, etc" {
     resolves = ["Final"]
 }
 
+action "Skip template branch" {
+    uses = "actions/npm@master"
+    runs = "./.github/main.workflow.sh"
+    args = "skip-template-branch"
+}
+
 action "Run Before" {
     uses = "actions/npm@master"
-    runs = "./scripts/npm-scripts.sh"
-    args = ["shell", "touch", "/github/home/foobar"]
+    runs = "./.github/main.workflow.sh"
+    args = "shell touch /github/home"
 }
+
 action "Run 1" {
     needs = "Run Before"
     uses = "actions/npm@master"
