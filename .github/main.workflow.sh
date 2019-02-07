@@ -6,6 +6,8 @@ set -euxo pipefail
 script="$1"
 shift
 
+PATH="$PWD/node_modules/.bin:$PATH"
+
 function isWsl {
     [ -f "/proc/version" ] && [[ "$(cat /proc/version)" =~ Microsoft ]]
 }
