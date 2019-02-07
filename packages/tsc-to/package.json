@@ -35,7 +35,7 @@
     "transpile-only"
   ],
   "scripts": {
-    "build": "tsc -p ."
+    "build": "tsc --build --verbose"
   },
   "files": [
     "dist",
