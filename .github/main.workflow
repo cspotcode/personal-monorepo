@@ -9,8 +9,15 @@ action "Gatekeeper" {
     args = "gatekeeper"
 }
 
-action "Build" {
+action "Bootstrap" {
     needs = "Gatekeeper"
+    uses = "docker://node:10"
+    runs = "./.github/main.workflow.sh"
+    args = "bootstrap"
+}
+
+action "Build" {
+    needs = "Bootstrap"
     uses = "docker://node:10"
     runs = "./.github/main.workflow.sh"
     args = "build"
@@ -31,7 +38,7 @@ action "Docs" {
 }
 
 action "Publish monorepo template" {
-    needs = "Gatekeeper"
+    needs = "Bootstrap"
     uses = "docker://node:10"
     runs = "./.github/main.workflow.sh"
     args = "publish-monorepo-template"
