@@ -1,6 +1,19 @@
 Monorepo for personal projects.  The goal is to reduce duplicated effort and make it
 easier to stay consistent between projects.
 
+A template of this monorepo -- all the boilerplate and helper scripts but without my packages --
+is extracted and auto-published to the `template` branch.
+https://github.com/cspotcode/personal-monorepo/tree/template/
+
+# Conventions
+
+Each subproject needs to follow these conventions to play nice with lerna and CI / CD.
+
+`yarn clean` is nice to have.  Not necessary; CI won't run it.
+`yarn build`, if present, will be run to build the project before `yarn test`.
+`yarn test` must run unit tests.  It does *not* need to build the project.
+`yarn build-docs` will build documentation.  TODO where do the docs go?  How do we publish them?  Push to a branch?
+
 ## Notes
 
 ### Adding a pre-existing checkout to this monorepo as a git submodule

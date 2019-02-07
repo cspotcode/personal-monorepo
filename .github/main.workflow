@@ -1,4 +1,4 @@
-workflow "Run Tests" {
+workflow "Tests, docs, etc" {
     on = "push"
     resolves = ["Final"]
 }
@@ -6,13 +6,13 @@ workflow "Run Tests" {
 action "Run Before" {
     uses = "actions/npm@master"
     runs = "./scripts/npm-scripts.sh"
-    args = ["shell", "touch", "/github/workspace/foobar"]
+    args = ["shell", "touch", "/github/home/foobar"]
 }
 action "Run 1" {
     needs = "Run Before"
     uses = "actions/npm@master"
     runs = "./scripts/npm-scripts.sh"
-    args = "shell ls -al /github/workspace"
+    args = "shell ls -al /github/home"
 }
 
 action "Run 2" {

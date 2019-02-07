@@ -5,7 +5,14 @@ import process from 'process';
 import Path from 'path';
 import outdent from 'outdent';
 import {assign, template, mapValues, each, fromPairs, defaults} from 'lodash';
-import {patchJsonFile, writeTextFile, readTextFile, tryFilterMap, readJsonFile, extractDelimitedSpan, writeJsonFile} from '../packages/scripting-core/src/core';
+import * as __core from '../packages/scripting-core/src/core';
+let core: typeof __core;
+try {
+    core = require('../packages/scripting-core/src/core');
+} catch {
+    core = require('../../packages/scripting-core/src/core');
+}
+const {patchJsonFile, writeTextFile, readTextFile, tryFilterMap, readJsonFile, extractDelimitedSpan, writeJsonFile} = core;
 
 /**
  * TODO Extra stuff to emit:
@@ -24,8 +31,8 @@ import {patchJsonFile, writeTextFile, readTextFile, tryFilterMap, readJsonFile, 
  *   sourceMap
  *   declaration
  *   declarationMap
- *   newline
  *   stripInternal
+ *   newline
  * 
  * EMIT JSON WITH TRAILING NEWLINE
  */
@@ -55,13 +62,24 @@ function main() {
     });
 
     patchJsonFile(workspaceFilename, (v) => {
-        v.folders = [
+        const {_folders} = v;
+        const folders = [
             {
                 name: "__ROOT__",
                 path: ".",
             },
-            ...packageNames.filter(n => !v._folders.some(v => v.name === n)).map(v => ({
+            ...['__template__', ...packageNames].filter(n => !v._folders.some(v => v.name === n)).map(v => ({
                 name: `${ v }`,
+                path: `packages/${ v }`,
+            }))
+        ];
+        v.folders = folders.filter(n => !_folders.some(v => v.name === n.name));
+        v._folders = folders.filter(n => _folders.some(v => v.name === n.name));
+    });
+
+    patchJsonFile('tsconfig.json', (v) => {
+        v.references = [
+            ...packageNames.map(v => ({
                 path: `packages/${ v }`,
             }))
         ];
