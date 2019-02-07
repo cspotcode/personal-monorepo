@@ -37,6 +37,7 @@ done
 echo "fixup..."
 pushd ./monorepo-template > /dev/null
 yarn fixup
+mv ./.github/main.workflow ./.github/main.workflow__REMOVE_THIS_SUFFIX__
 git init
 git config user.name "Andrew Bradley"
 git config user.email "cspotcode@gmail.com"
