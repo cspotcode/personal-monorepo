@@ -12,8 +12,9 @@ function isWsl {
 case "$script" in
 ###<NAMES>
 skip-template-branch)
-    if [  ] ; then
-
+    if [ "$GITHUB_REF" = "refs/heads/template" ] ; then
+        echo "Halting; do not run actions on template branch"
+        exit 78
     fi
     ;;
 
