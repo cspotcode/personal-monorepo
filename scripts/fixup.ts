@@ -175,7 +175,7 @@ function main() {
                 delete pkg.scripts[k];
             }
         });
-    });
+    }, {indentationLevel: 2});
 
     // TODO enforce LICENSE files and package.json props
     // TODO enforce CONTRIBUTING file?
