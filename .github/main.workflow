@@ -4,35 +4,35 @@ workflow "Tests, docs, etc" {
 }
 
 action "Gatekeeper" {
-    uses = "actions/npm@master"
+    uses = "docker://node:10"
     runs = "./.github/main.workflow.sh"
     args = "gatekeeper"
 }
 
 action "Build" {
     needs = "Gatekeeper"
-    uses = "actions/npm@master"
+    uses = "docker://node:10"
     runs = "./.github/main.workflow.sh"
     args = "build"
 }
 
 action "Test" {
     needs = "Build"
-    uses = "actions/npm@master"
+    uses = "docker://node:10"
     runs = "./.github/main.workflow.sh"
     args = "test"
 }
 
 action "Docs" {
     needs = "Build"
-    uses = "actions/npm@master"
+    uses = "docker://node:10"
     runs = "./.github/main.workflow.sh"
     args = "docs"
 }
 
 action "Publish monorepo template" {
     needs = "Gatekeeper"
-    uses = "actions/npm@master"
+    uses = "docker://node:10"
     runs = "./.github/main.workflow.sh"
     args = "publish-monorepo-template"
     secrets = ["GITHUB_TOKEN"]
