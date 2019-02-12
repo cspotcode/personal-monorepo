@@ -1,0 +1,24 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/api-extractor/api-extractor.schema.json",
+    "project": {
+        "entryPointSourceFile": "dist/index.d.ts"
+    },
+    "compiler": {
+        "rootFolder": ".",
+        "configType": "tsconfig"
+    },
+    "apiReviewFile": {
+        "enabled": true,
+        "apiReviewFolder": "build",
+        "tempFolder": "build/temp"
+    },
+    "apiJsonFile": {
+        "enabled": true,
+        "outputFolder": "build"
+    },
+    "dtsRollup": {
+        "enabled": true,
+        "mainDtsRollupPath": "rollup.d.ts",
+        "publishFolder": "build"
+    }
+}
