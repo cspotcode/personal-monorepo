@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "find-up": "^3.0.0"
+  }
+}
