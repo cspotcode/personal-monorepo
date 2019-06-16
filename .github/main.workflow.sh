@@ -56,6 +56,9 @@ exit)
     exit "$@"
     ;;
 
+noop)
+    ;;
+
 ###</NAMES>
 *)
     echo "Unrecognized script: $script"
