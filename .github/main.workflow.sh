@@ -3,6 +3,8 @@
 printf "\n\n\n================================================\n\n\n"
 set -euxo pipefail
 
+time_start="$( date -Iseconds --utc )"
+
 script="$1"
 shift
 
@@ -60,3 +62,6 @@ exit)
     exit 1
     ;;
 esac
+
+time_end="$( date -Iseconds --utc )"
+printf "Started: %s\nEnded:   %s\n" "$time_start" "$time_end"
