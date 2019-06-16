@@ -22,7 +22,7 @@ blocks:
       prologue:
         commands:
           - checkout
-          - if [[ -f .nvmrc ]] ; then nvm use ; else nvm use latest ; fi
+          - if [[ -f .nvmrc ]] ; then nvm use ; else nvm use node ; fi
           - node --version
           - npm --version
           - yarn --version
