@@ -1,0 +1,36 @@
+version: v1.0
+
+name: personal-monorepo
+
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+
+# Blocks are the heart of a pipeline and are executed sequentially.
+# Each block has a task that defines one or more jobs. Jobs define the
+# commands to execute.
+# See https://docs.semaphoreci.com/article/62-concepts
+blocks:
+  - name: Install dependencies
+    task:
+      env_vars: &env
+        #- name: NODE_ENV
+        #  value: test
+        - name: CI
+          value: 'true'
+      prologue:
+        commands:
+          - checkout
+          - if [[ -f .nvmrc ]] ; then nvm use ; else nvm use latest ; fi
+          - node --version
+          - npm --version
+          - yarn --version
+      jobs:
+        - name: Do everything
+          commands:
+            - cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json),node-modules-$SEMAPHORE_GIT_BRANCH,node-modules-master
+            - yarn
+            - cache store node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json) node_modules
+            - yarn lerna run build
+            - yarn lerna run test
