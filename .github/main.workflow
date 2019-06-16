@@ -13,14 +13,14 @@ action "No-op 1" {
     needs = "Gatekeeper"
     uses = "./.github/workflow-image"
     runs = "./.github/main.workflow.sh"
-    args = "exit 0"
+    args = "noop"
 }
 
 action "No-op 2" {
     needs = "No-op 1"
     uses = "./.github/workflow-image"
     runs = "./.github/main.workflow.sh"
-    args = "exit 0"
+    args = "noop"
 }
 
 action "Bootstrap" {
