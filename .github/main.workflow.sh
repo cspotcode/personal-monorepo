@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
+# GitHub Actions logs stderr and stdout out of sync so we have to sync them up
+# in-process.
 exec 2>&1
 
 printf "\n\n\n================================================\n\n\n"
 set -euxo pipefail
 
-time_start="$( date -Iseconds --utc )"
+time_start="$( date -Ins --utc )"
 
 script="$1"
 shift
@@ -68,5 +70,5 @@ noop)
     ;;
 esac
 
-time_end="$( date -Iseconds --utc )"
+time_end="$( date -Ins --utc )"
 printf "Started: %s\nEnded:   %s\n" "$time_start" "$time_end"
