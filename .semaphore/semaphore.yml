@@ -22,14 +22,13 @@ blocks:
       prologue:
         commands:
           - checkout
-          - nvm use
+          - if [[ -f .nvmrc ]] ; then nvm use ; else nvm use latest ; fi
           - node --version
           - npm --version
           - yarn --version
       jobs:
         - name: Do everything
           commands:
-            - cd src/client
             - cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json),node-modules-$SEMAPHORE_GIT_BRANCH,node-modules-master
             - yarn
             - cache store node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json) node_modules
