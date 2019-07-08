@@ -1,0 +1,87 @@
+# Goodies that must be sourced into the bash shell
+#
+# Commands:
+# - r: to project root
+# - p: to package sub-directory
+# If trailing args are passed to either, commands will be invoked in the directory
+# rather than `cd`-ing.
+#
+
+# if [ "x$MONOREPO_SHELL_LOADED" = "x" ] ; then
+    MONOREPO_SHELL_LOADED=1
+    MONOREPO_ROOT="$PWD"
+
+    # Plopfile is written as .ts, so tell ts-node to transpile correctly and not to typecheck
+    alias plop='TS_NODE_TRANSPILE_ONLY=true TS_NODE_COMPILER_OPTIONS={\"module\":\"commonjs\"} plop'
+
+    r() {
+        if (( ${#PWD} < ${#MONOREPO_ROOT} )) || [ "${PWD:0:${#MONOREPO_ROOT}}" != "$MONOREPO_ROOT" ] ; then
+          echo "Error: Cannot run this outside of the monorepo" 1>&2
+          return 1
+        fi
+        if [ "$#" = 0 ] ; then
+            cd "$MONOREPO_ROOT"
+        else
+            pushd "$MONOREPO_ROOT"
+            "$@"
+            popd
+        fi
+    }
+
+    p() {
+        if (( ${#PWD} < ${#MONOREPO_ROOT} )) || [ "${PWD:0:${#MONOREPO_ROOT}}" != "$MONOREPO_ROOT" ] ; then
+          echo "Error: Cannot run this outside of the monorepo" 1>&2
+          return 1
+        fi
+        local name=$1
+        shift
+        if [ "$#" = 0 ] ; then
+            cd "$MONOREPO_ROOT/packages/$name"
+        else
+            pushd "$MONOREPO_ROOT/packages/$name"
+            "$@"
+            popd
+        fi
+    }
+
+    _monorepo_p_completions() {
+
+        local cur_word args
+
+        local cur_word="${COMP_WORDS[COMP_CWORD]}"
+        local args=("${COMP_WORDS[@]}")
+
+        # completions for package name
+        if [ $COMP_CWORD = 1 ] ; then
+            local candidates="$( ls $MONOREPO_ROOT/packages )"
+            COMPREPLY=( $(compgen -W "$candidates" -- "${cur_word}") )
+        fi
+
+        # # all subsequent completions; delegate to bash default behavior (does not work)
+        # if (( $COMP_CWORD > 1 )) ; then
+        #     local re=' *p +\S+ +(.*)'
+        #     if [[ "$COMP_LINE" =~ $re ]] ; then
+        #         local NEW_COMP_LINE="${BASH_REMATCH[1]}"
+        #     fi
+        #     COMP_CWORD=$(( $COMP_CWORD - 2 ))
+        #     COMP_WORDS=("${COMP_WORDS[@]:1:9999}")
+        #     COMP_POINT=$(( $COMP_POINT - $(( ${#COMP_LINE} - ${#NEW_COMP_LINE} )) ))
+        #     COMP_LINE="$NEW_COMP_LINE"
+        # fi
+
+        # echo "---"
+        # echo COMP_CWORD '<' "$COMP_CWORD" '>'
+        # echo COMP_LINE '<' "$COMP_LINE" '>'
+        # echo COMP_POINT '<' "$COMP_POINT" '>'
+        # echo "----"
+
+        # if no match was found, fall back to filename completion
+        if [ ${#COMPREPLY[@]} -eq 0 ]; then
+            COMPREPLY=()
+        fi
+
+        return 0
+    }
+
+    complete -o default -F _monorepo_p_completions p
+# fi
