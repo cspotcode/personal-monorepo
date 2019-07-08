@@ -1,6 +1,12 @@
 {
     "extends": "./tsconfig-base.json",
-    "references": [
+    "exclude": [
+        "packages"
+    ],
+    "_references": [
+        {
+            "path": "packages/bash-dirname"
+        },
         {
             "path": "packages/chainable-api"
         },
@@ -14,7 +20,16 @@
             "path": "packages/comprehensive-npmignore"
         },
         {
+            "path": "packages/core"
+        },
+        {
+            "path": "packages/difflib"
+        },
+        {
             "path": "packages/env2-shebang"
+        },
+        {
+            "path": "packages/gdocs-to-markdown"
         },
         {
             "path": "packages/html-comment-preprocessor"
@@ -23,7 +38,19 @@
             "path": "packages/ignore-preprocessor"
         },
         {
+            "path": "packages/js-to-ts"
+        },
+        {
+            "path": "packages/json-schema-to-openapi-schema"
+        },
+        {
+            "path": "packages/listary-extension-core"
+        },
+        {
             "path": "packages/mocha-modern"
+        },
+        {
+            "path": "packages/ms-graph-sandbox"
         },
         {
             "path": "packages/node-module-hooks"
@@ -32,7 +59,16 @@
             "path": "packages/preprocessor"
         },
         {
+            "path": "packages/react-styled-components"
+        },
+        {
             "path": "packages/scripting-core"
+        },
+        {
+            "path": "packages/swc-require-hook"
+        },
+        {
+            "path": "packages/testing-core"
         },
         {
             "path": "packages/ts-node-to"
@@ -44,7 +80,16 @@
             "path": "packages/tsc-to"
         },
         {
+            "path": "packages/typescript-json-schema-extractor"
+        },
+        {
             "path": "packages/typescript-toolbelt"
+        },
+        {
+            "path": "packages/typescript-yarn-pnp"
+        },
+        {
+            "path": "packages/webpack-config-prefabs"
         }
     ]
 }

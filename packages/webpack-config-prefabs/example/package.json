@@ -1,5 +1,9 @@
 {
   "dependencies": {
     "find-up": "^3.0.0"
+  },
+  "webpack-config-prefabs": "nodeLibrary",
+  "scripts": {
+    "bundle": "webpack --config ../auto.js"
   }
 }

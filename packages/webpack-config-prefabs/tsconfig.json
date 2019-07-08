@@ -1,10 +1,18 @@
 {
-  "include": ["src"],
+  "extends": "../../tsconfig-base.json",
+  "references": [
+      {
+          "path": "src"
+      },
+      {
+          "path": "test"
+      },
+      {
+          "path": "example"
+      }
+  ],
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist",
-    "esModuleInterop": true,
-    "types": ["node"],
-    "sourceMap": true
+      "composite": true,
+      "rootDir": "."
   }
 }

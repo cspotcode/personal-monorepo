@@ -20,6 +20,7 @@ outDir
 */
 
 {
+  "compileOnSave": true,
   // "files": [],
   // "include": [],
   "compilerOptions": {
@@ -29,7 +30,7 @@ outDir
     "lib": ["esnext"],                             /* Specify library files to be included in the compilation. */
     // "allowJs": true,                       /* Allow javascript files to be compiled. */
     // "checkJs": true,                       /* Report errors in .js files. */
-    // "jsx": "preserve",                     /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
+    "jsx": "react",                     /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
     "declaration": true,                   /* Generates corresponding '.d.ts' file. */
     "declarationMap": true,                /* Generates a sourcemap for each corresponding '.d.ts' file. */
     "stripInternal": true,
@@ -81,6 +82,14 @@ outDir
     "experimentalDecorators": true,        /* Enables experimental support for ES7 decorators. */
     "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
 
-    "newLine": "LF"
+    "newLine": "LF",
+
+    // Limit the number of @types packages that are eagerly loaded during compilation.
+    // Sub-packages can augment this list if they need to load more global declarations.
+    // imported dependencies do not need to be specified here, so 9 times out of 10
+    // "node" is the only one you need.
+    "types": ["node"],
+
+    "incremental": true
   }
 }

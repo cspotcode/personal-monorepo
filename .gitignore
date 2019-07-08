@@ -1,3 +1,4 @@
+.pnp
 node_modules
 docs-clone
 {yarn,lerna,npm}-{debug,error}.log
@@ -6,5 +7,11 @@ node_modules
 packages/*/dist
 packages/*/docs
 packages/*/node_modules
+packages/*/src/node_modules
+packages/*/example/node_modules
+packages/*/test/node_modules
+personal-monorepo-focused.code-workspace
 yarn.lock
 yarn-error.log
+tsconfig.tsbuildinfo
+packages/*/tsconfig.tsbuildinfo

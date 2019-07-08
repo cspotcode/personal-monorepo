@@ -1,6 +1,7 @@
-const {nodeLibrary} = require('./dist');
+/// <reference types="node" />
+const {nodeLibrary} = require('../dist');
 
 module.exports = nodeLibrary(module, {
-    entry: './findupExample.js',
-    outputFilepath: './findupExampleBundle.js',
+    outputFilepath: './bundle.js',
+    minimize: false
 });
