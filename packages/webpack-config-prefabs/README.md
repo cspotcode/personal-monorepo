@@ -23,3 +23,26 @@ module.exports = nodeLibrary(module, {
 
 *`module` is passed so that we can discover the root directory of your project, which
 allows us to generate more defaults automatically.*
+
+## Experimental automatic configuration
+
+If you want to avoid creating a `webpack.config.js`, add a package script that
+tells webpack to use the bundled auto.js script.  Also add a
+`"webpack-config-prefabs"` property specifying which prefab to use.
+
+```
+// in your package.json
+"scripts": {
+    "bundle": "webpack --config ./node_modules/webpack-config-prefabs/auto.js"
+},
+"webpack-config-prefabs": "nodeLibrary"
+```
+
+And run the script:
+
+```
+$ yarn bundle
+```
+
+`auto.js` will read your package.json and generate a default config from the
+prefab.  You can't specify options, so you're forced to use the default.

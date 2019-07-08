@@ -18,7 +18,10 @@
     "webpack": "*"
   },
   "scripts": {
-    "build": "tsc --build"
+    "clean": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./package-scripts.sh",
+    "test": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./package-scripts.sh",
+    "prepublishOnly": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./package-scripts.sh",
+    "build": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./package-scripts.sh"
   },
   "personalMonoRepoMeta": {
     "livesIn": "mono"
@@ -33,6 +36,7 @@
   "npmignore": [
     ".yarnrc",
     "example",
+    "package-scripts.sh",
     "scripts",
     "test",
     "tsconfig.tsbuildinfo",
