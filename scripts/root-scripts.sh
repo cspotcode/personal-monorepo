@@ -26,12 +26,21 @@ fixup)
     ;;
 
 new-package)
-    mkdir packages/$1
-    npm run fixup
+    mkdir "packages/$1"
+    cp -r packages/__template__/* "packages/$1"
+    yarn run fixup
     ;;
 
 focus)
-    ./scripts/focus.ts "$@"
+    ./scripts/focus.ts reset "$@"
+    ;;
+
+focus-add)
+    ./scripts/focus.ts add "$@"
+    ;;
+
+focus-rm)
+    ./scripts/focus.ts rm "$@"
     ;;
 
 # Run a command in a specific package's subdirectory
@@ -52,6 +61,10 @@ exit)
 
 lerna)
     lerna "$@"
+    ;;
+
+dump-env)
+    export
     ;;
 
 # _version-this-package)
