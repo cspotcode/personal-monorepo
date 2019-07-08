@@ -12,20 +12,6 @@
         }
     },
     "packages": [
-        "packages/chainable-api",
-        "packages/chrome-extension-sandbox",
-        "packages/codegen",
-        "packages/comprehensive-npmignore",
-        "packages/env2-shebang",
-        "packages/html-comment-preprocessor",
-        "packages/ignore-preprocessor",
-        "packages/mocha-modern",
-        "packages/node-module-hooks",
-        "packages/preprocessor",
-        "packages/scripting-core",
-        "packages/ts-node-to",
-        "packages/ts-wrapper",
-        "packages/tsc-to",
-        "packages/typescript-toolbelt"
+        "packages/!(__template__)"
     ]
 }

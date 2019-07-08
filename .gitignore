@@ -10,8 +10,45 @@ packages/*/node_modules
 packages/*/src/node_modules
 packages/*/example/node_modules
 packages/*/test/node_modules
+packages/*/tsconfig.tsbuildinfo
 personal-monorepo-focused.code-workspace
+tsconfig.tsbuildinfo
 yarn.lock
 yarn-error.log
-tsconfig.tsbuildinfo
-packages/*/tsconfig.tsbuildinfo
+
+
+### <FIXUP>
+# Ignore package subdirectories that don't have a package.json.
+# They are likely left-over from switching branches, where build
+# artifacts exist on disk.
+packages/*
+packages/!bash-dirname
+packages/!chainable-api
+packages/!chrome-extension-sandbox
+packages/!codegen
+packages/!comprehensive-npmignore
+packages/!core
+packages/!difflib
+packages/!env2-shebang
+packages/!gdocs-to-markdown
+packages/!html-comment-preprocessor
+packages/!ignore-preprocessor
+packages/!js-to-ts
+packages/!json-schema-to-openapi-schema
+packages/!listary-extension-core
+packages/!mocha-modern
+packages/!ms-graph-sandbox
+packages/!node-module-hooks
+packages/!preprocessor
+packages/!react-styled-components
+packages/!scripting-core
+packages/!swc-require-hook
+packages/!testing-core
+packages/!ts-node-to
+packages/!ts-wrapper
+packages/!tsc-to
+packages/!typescript-json-schema-extractor
+packages/!typescript-toolbelt
+packages/!typescript-yarn-pnp
+packages/!webpack-config-prefabs
+### </FIXUP>
