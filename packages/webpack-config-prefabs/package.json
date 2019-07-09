@@ -4,8 +4,7 @@
   "main": "dist/index",
   "devDependencies": {
     "@types/lodash": "^4.14.122",
-    "typescript": "^3.5.2",
-    "webpack-cli": "^3.2.3"
+    "typescript": "^3.5.2"
   },
   "dependencies": {
     "@types/webpack": "^4.4.34",
@@ -15,7 +14,8 @@
     "string-replace-loader": "*",
     "ts-loader": "*",
     "typescript": "*",
-    "webpack": "*"
+    "webpack": "*",
+    "webpack-cli": "*"
   },
   "scripts": {
     "clean": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./package-scripts.sh",
@@ -52,6 +52,5 @@
   "author": {
     "name": "Andrew Bradley",
     "url": "https://cspotcode.com"
-  },
-  "types": "dist/index.d.ts"
+  }
 }
