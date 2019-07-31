@@ -7,7 +7,7 @@ console.dir(module.id);
 import bar from './bar';
 
 import 'lazy-imports/enable';
-import baz from './baz';
+import * as baz from './baz';
 import 'lazy-imports/disable';
 
 console.log('foo has not been used yet');
@@ -17,5 +17,5 @@ console.log('bar has not been used yet');
 bar();
 console.log('bar has been used');
 console.log('baz has not been used yet');
-baz();
+baz.default();
 console.log('baz has been used');

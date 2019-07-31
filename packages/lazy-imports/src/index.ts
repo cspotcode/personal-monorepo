@@ -1,8 +1,8 @@
 /** Create a function that returns lazy proxies which lazily invoke the wrapped function and wrap its return value. */
 function createLazyFunction<T extends (...args: any[]) => any>(fn: T): T {
-	return function(...args: any[]) {
-		return createLazyProxy(() => fn(...args));
-	} as unknown as any;
+    return function(...args: any[]) {
+        return createLazyProxy(() => fn(...args));
+    } as unknown as any;
 }
 
 /** create a function that delegates to one of 2 implementations depending on if it's toggled on or off */
@@ -23,33 +23,37 @@ function createToggledFunction<T extends (...args: any[]) => any>({isToggled, to
 const GETTER = Symbol();
 
 function createLazyProxy<T>(getter: () => T): T {
-	let value: any;
-	let gotIt = false;
-	function getIt() {
-		if(!gotIt) {
-			gotIt = true;
-			value = getter();
-		}
-		return value;
-	}
-	const handler = {
-		get: (target: any, property: string | number | symbol) => {
-			if(property === GETTER) return getIt;
-			getIt();
-			return Reflect.get(value, property);
-		},
-		apply: (target: any, thisArgument: any, argumentsList: any[]) => {
-			getIt();
-			return Reflect.apply(value, thisArgument, argumentsList);
-		},
-		construct: (target: any, argumentsList: any[]) => {
-			getIt();
-			return Reflect.construct(value, argumentsList);
-		}
-	};
+    let value: any;
+    let gotIt = false;
+    function getIt() {
+        if(!gotIt) {
+            gotIt = true;
+            value = getter();
+        }
+        return value;
+    }
+    const handler: ProxyHandler<any> = {
+        ownKeys: (target) => {
+            getIt();
+            return Reflect.ownKeys(value);
+        },
+        get: (target, property) => {
+            if(property === GETTER) return getIt;
+            getIt();
+            return Reflect.get(value, property);
+        },
+        apply: (target, thisArgument, argumentsList) => {
+            getIt();
+            return Reflect.apply(value, thisArgument, argumentsList);
+        },
+        construct: (target, argumentsList) => {
+            getIt();
+            return Reflect.construct(value, argumentsList);
+        }
+    };
 
-	// eslint-disable-next-line prefer-arrow-callback
-	return new Proxy(function () {}, handler);
+    // eslint-disable-next-line prefer-arrow-callback
+    return new Proxy(function () {}, handler);
 };
 
 let enabled = false;
