@@ -1,6 +1,5 @@
 {
   "name": "lazy-imports",
-  "description": "Lazily import node modules while still using standard ES `import` syntax.",
   "personalMonoRepoMeta": {
     "livesIn": "mono"
   },

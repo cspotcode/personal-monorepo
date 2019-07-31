@@ -1,4 +1,6 @@
-Enable lazy-loading of dependencies while still using normal `import` syntax.  Supports TypeScript's downlevel compilation.
+# lazy-imports
+
+Enable lazy-loading of dependencies while using normal `import` syntax, without a bundler.  Supports TypeScript's downlevel compilation.
 
 I created this to boost the performance of a CLI tool.  If the user runs `cli-tool --help` they should see usage info
 very quickly without loading the `aws-sdk`.  If they `cli-tool upload-report-to-s3` then it should load *only* the 
