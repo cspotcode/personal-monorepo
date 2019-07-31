@@ -11,7 +11,9 @@
     "src",
     "tsconfig.json",
     "enable.js",
-    "disable.js"
+    "disable.js",
+    "enable.d.ts",
+    "disable.d.ts"
   ],
   "npmignore": [
     ".yarnrc",
