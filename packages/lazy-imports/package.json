@@ -1,0 +1,46 @@
+{
+  "name": "lazy-imports",
+  "personalMonoRepoMeta": {
+    "livesIn": "mono"
+  },
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "dist/index",
+  "files": [
+    "dist",
+    "src",
+    "tsconfig.json",
+    "enable.js",
+    "disable.js"
+  ],
+  "npmignore": [
+    ".yarnrc",
+    "example",
+    "scripts",
+    "test",
+    "yarn.lock",
+    "yarn-error.log",
+    "package-scripts.sh"
+  ],
+  "homepage": "https://github.com/cspotcode/personal-monorepo/tree/master/packages/lazy-imports",
+  "bugs": "https://github.com/cspotcode/personal-monorepo/issues?labels=P:lazy-imports",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cspotcode/personal-monorepo.git"
+  },
+  "author": {
+    "name": "Andrew Bradley",
+    "url": "https://cspotcode.com"
+  },
+  "scripts": {
+    "build": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./package-scripts.sh",
+    "docs": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./package-scripts.sh",
+    "test": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./package-scripts.sh"
+  },
+  "peerDependencies": {
+    "tslib": "^1.10.0"
+  },
+  "devDependencies": {
+    "tslib": "^1.10.0"
+  }
+}

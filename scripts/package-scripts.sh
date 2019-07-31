@@ -5,7 +5,7 @@ __dirname="$(CDPATH= cd "$(dirname "$( readlink "${BASH_SOURCE[0]}" || printf "%
 case "$script" in
 ###<NAMES>
 clean)
-    tsc --build --clean --verbose
+    tsc --build --clean
     ;;
 
 build)

@@ -1,0 +1,22 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+require("lazy-imports/enable");
+var foo_1 = tslib_1.__importDefault(require("./foo"));
+require("lazy-imports/disable");
+console.dir(Object.keys(require.cache));
+console.dir(module.id);
+var bar_1 = tslib_1.__importDefault(require("./bar"));
+require("lazy-imports/enable");
+var baz_1 = tslib_1.__importDefault(require("./baz"));
+require("lazy-imports/disable");
+console.log('foo has not been used yet');
+foo_1.default();
+console.log('foo has been used');
+console.log('bar has not been used yet');
+bar_1.default();
+console.log('bar has been used');
+console.log('baz has not been used yet');
+baz_1.default();
+console.log('baz has been used');
+//# sourceMappingURL=example.js.map

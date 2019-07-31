@@ -97,7 +97,7 @@ function main() {
             # They are likely left-over from switching branches, where build
             # artifacts exist on disk.
             packages/*
-            ${ packageNames.map(v => `packages/!${v}`).join('\n') }
+            ${ packageNames.map(v => `!packages/${v}`).join('\n') }
 
         `;
         try {
@@ -164,8 +164,6 @@ function main() {
                 // For Node to load either .js or .mjs
                 // Bundlers that support .mjs should also pick it up.
                 main: 'dist/index',
-                // TODO does tsc understand if types omits file extension?
-                types: 'dist/index.d.ts',
                 files: [
                     "dist",
                     "src",
