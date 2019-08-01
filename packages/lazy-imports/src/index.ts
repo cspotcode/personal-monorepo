@@ -35,7 +35,15 @@ function createLazyProxy<T>(getter: () => T): T {
     const handler: ProxyHandler<any> = {
         ownKeys: (target) => {
             getIt();
-            return Reflect.ownKeys(value);
+            const keys = Reflect.ownKeys(value);
+            // These 3 keys *must* be included since we are pretending to be a function.
+            // This is an invariant enforced by the JS spec and will throw if we do the wrong thing.
+            for(const add of ['prototype', 'arguments', 'caller']) {
+                if(!keys.includes(add)) {
+                    keys.push(add);
+                }
+            }
+            return keys;
         },
         get: (target, property) => {
             if(property === GETTER) return getIt;
