@@ -1,0 +1,38 @@
+{
+  "personalMonoRepoMeta": {
+    "livesIn": "mono"
+  },
+  "name": "bash-node-ipc",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "dist/index",
+  "bin": {
+    "bash-node-ipc": "dist/bin/bash-node-ipc.js"
+  },
+  "files": [
+    "dist",
+    "src",
+    "tsconfig.json"
+  ],
+  "npmignore": [
+    ".yarnrc",
+    "example",
+    "scripts",
+    "test",
+    "yarn.lock",
+    "yarn-error.log"
+  ],
+  "homepage": "https://github.com/cspotcode/personal-monorepo/tree/master/packages/bash-node-ipc",
+  "bugs": "https://github.com/cspotcode/personal-monorepo/issues?labels=P:bash-node-ipc",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cspotcode/personal-monorepo.git"
+  },
+  "author": {
+    "name": "Andrew Bradley",
+    "url": "https://cspotcode.com"
+  },
+  "dependencies": {
+    "binary-split": "^1.0.5"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig-base.json",
+  "references": [{
+    "path": "src"
+  }],
+  "exclude": ["src", "experiments"],
+  "compilerOptions": {
+    "composite": true
+  }
+}

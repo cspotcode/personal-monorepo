@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+__dirname="$( cd $(dirname $0) && pwd)"
+
+# This function only needed for demo
+function bash-node-ipc {
+    $(dirname $0)/../dist/bin/bash-node-ipc.js "$@"
+}
+
+# Launch slave process
+eval "$( bash-node-ipc $__dirname/node-fns.js node_coproc )"
+
+# Invoke functions exported by node coprocess
+a=$(foo)
+printf "foo: "
+printf "<%s>\n" "$a"
+
+a=$(bar a b c)
+printf "bar: "
+printf "<%s>\n" "$a"
+
+a=$(baz a b c)
+printf "baz: "
+printf "<%s>\n" "$a"

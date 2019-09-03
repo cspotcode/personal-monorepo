@@ -1,0 +1,9 @@
+{
+  "extends": "..",
+  "include": ["**/*"],
+  "exclude": [],
+  "compilerOptions": {
+    "outDir": "../dist",
+    "noEmit": false
+  }
+}
