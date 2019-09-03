@@ -9,7 +9,7 @@ function bash-node-ipc {
 }
 
 # Launch slave process
-eval "$( bash-node-ipc $__dirname/node-fns.js node_coproc )"
+eval "$( bash-node-ipc bootstrap $__dirname/node-fns.js node_coproc )"
 
 # Invoke functions exported by node coprocess
 a=$(foo)

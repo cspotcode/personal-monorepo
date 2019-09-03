@@ -17,7 +17,7 @@ functions.
 Put this snippet at the top of your bash script:
 
 ```
-eval "$( bash-node-ipc $__dirname/node-fns.js node_coproc )"
+eval "$( bash-node-ipc bootstrap $__dirname/node-fns.js node_coproc )"
 ```
 
 This will launch the node coprocess and declare a bash function corresponding to

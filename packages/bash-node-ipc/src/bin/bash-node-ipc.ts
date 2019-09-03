@@ -25,11 +25,11 @@ async function main() {
 
             case 'bootstrap':
                 console.log(`
-                    # Launch slave process
-                    bash-node-ipc $__dirname/node-fns.js node_coproc
+                    # Launch coprocess
                     {
                         coproc ${bashCoprocName} { bash-node-ipc coproc ${ jsFile } ${ bashCoprocName }; } 3<&0 4>&1 0<&5 1>&6
                     } 5<&0 6>&1
+                    # Read stubs from coprocess, then eval them
                     bash_node_ipc_stubs=''
                     while IFS='' read -r -d $'\n' bash_node_ipc_stub_line
                     do
