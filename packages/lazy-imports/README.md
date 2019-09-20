@@ -50,3 +50,15 @@ so each time you import them, they execute and enable / disable lazy loading.
 This is necessary because import statements are hoisted above all other statements,
 so our enable / disable logic must be in the form of import statements.
 We can't, for example, do `enableLazyLoading()`.
+
+## TODOs
+
+Needing to manually enable and disable in every file is annoying and problematic.  If you forget to do this in even one file, it might trigger expensive loading of dependencies that kinda defeats the whole purpose of doing this.
+
+There should be an alternative API so you can configure a glob pattern or subdirectory of code that will have laziness applied automatically.  So you can call `automaticallyLazy(__dirname)` *once* in your entrypoint and then all files in your module's `src` directory will have lazy imports.
+
+The existing `lazy-imports/{enable,disable}` API should be modified for compatibility:
+
+`import 'lazy-imports/enable';` *forces* lazyness, ignoring whatever you may have configured via `automaticallyLazy`
+`import 'lazy-imports/disable';` *force* lazyness to be *disabled*, ignoring whatever you may have configured via `automaticallyLazy`
+`require('lazy-imports/auto');` goes back to automatic behavior, so that `automaticallyLazy` behavior is followed.
