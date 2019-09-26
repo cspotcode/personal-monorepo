@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+echo "This stub should have been replaced by a symlink during installation of node-binaries." >&2
+
+exit 1

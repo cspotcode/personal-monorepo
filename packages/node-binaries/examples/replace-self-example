@@ -1,0 +1,3 @@
+#!/usr/bin/env node
+
+require('node-binaries').replaceWithSymlinkAndInvoke(__filename);

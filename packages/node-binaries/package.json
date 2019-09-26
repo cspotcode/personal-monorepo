@@ -1,0 +1,45 @@
+{
+  "name": "node-binaries",
+  "version": "0.0.0",
+  "personalMonoRepoMeta": {
+    "livesIn": "mono"
+  },
+  "license": "MIT",
+  "bin": {
+    "node-binary-path": "node-binary-path.js",
+    "node-binary": "node-binary"
+  },
+  "main": "index.js",
+  "files": [
+    "binaries",
+    "!binaries/node-win32-x64.exe",
+    "index.js",
+    "node-binary",
+    "node-binary-path.js",
+    "postinstall.js"
+  ],
+  "npmignore": [
+    ".yarnrc",
+    "example",
+    "scripts",
+    "test",
+    "yarn.lock",
+    "yarn-error.log"
+  ],
+  "homepage": "https://github.com/cspotcode/personal-monorepo/tree/master/packages/node-binaries",
+  "bugs": "https://github.com/cspotcode/personal-monorepo/issues?labels=P:node-binaries",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cspotcode/personal-monorepo.git"
+  },
+  "author": {
+    "name": "Andrew Bradley",
+    "url": "https://cspotcode.com"
+  },
+  "dependencies": {
+    "shell-quote": "^1.7.2"
+  },
+  "scripts": {
+    "postinstall": "node ./postinstall.js"
+  }
+}
