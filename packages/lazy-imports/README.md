@@ -3,13 +3,13 @@
 Enable lazy-loading of dependencies while using normal `import` syntax, without a bundler.  Supports TypeScript's downlevel compilation.
 
 I created this to boost the performance of a CLI tool.  If the user runs `cli-tool --help` they should see usage info
-very quickly without loading the `aws-sdk`.  If they `cli-tool upload-report-to-s3` then it should load *only* the 
-dependencies used for that subcommand, not others.  I wanted to accomplish this without sprinkling our functions with
+very quickly without loading, for example, the `aws-sdk`.  If they run `cli-tool upload-report-to-s3` then it should load *only* the 
+dependencies used for that subcommand.  I wanted to accomplish this lazy-loading without sprinkling our codebase with
 manual, delayed `require()` or `import()` calls.
 
 ## Example
 
-For TS support, you *must* be using `importHelpers`.
+For TS support, you *must* have `importHelpers` enabled, since we monkey-patch `'tslib'`.
 
 ```typescript
 import 'lazy-imports/enable';
@@ -50,3 +50,21 @@ so each time you import them, they execute and enable / disable lazy loading.
 This is necessary because import statements are hoisted above all other statements,
 so our enable / disable logic must be in the form of import statements.
 We can't, for example, do `enableLazyLoading()`.
+
+## TODOs
+
+Allow automatically enabling laziness across an entire codebase, without enabling and disabling in each file.
+For example, pass a root directory, and any imports performed by files under that directory
+will be automatically lazy-imported.  This allows us to apply lazy-loading to our own codebase and skip it
+for external codebases.
+* could use globs, but that's more runtime weight; potentially slows things down
+* trick is enabling at the top of our entry-point file.  We'll still need to use the `import` trick there
+
+```
+#!/usr/bin/env node
+// entry point file
+import 'lazy-imports/enable';
+//... imports ...
+require('lazy-imports/disable');
+require('lazy-imports').enableForDirectory(__dirname);
+```
