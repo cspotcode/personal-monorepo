@@ -8,7 +8,7 @@
   "main": "dist/index",
   "files": [
     "dist",
-    "factory.*",
+    "create.*",
     "src",
     "tsconfig.json"
   ],
