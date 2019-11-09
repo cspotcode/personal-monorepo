@@ -15,13 +15,17 @@ When required, it returns a monkey-patched version of the peer `typescript` modu
 The only change is the `transpileModule` function.  It will cache results on disk,
 so subsequent invocations should be much faster.
 
-Caching requires, and will *only* work, when the following requirements are met:
+Caching requires, and will *only* work, when the following requirements are met.
+If these requirements are not met, caching will be silently skipped.  If you
+wonder why your builds aren't getting faster, you might be violating these
+requirements.
 
 * no transformers
 * no diagnostics returned by the compiler
 * compiler version is the same
 * filename is the same
 * source code is the same
+* sourcemaps are enabled
 * config object is the same, as determined by serializing to JSON and sha1 hashing
 * using `transpileModule`.  Won't work if you're type-checking.  (do that separately, e.g. `tsc --noEmit`)
 
