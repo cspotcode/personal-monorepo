@@ -9,6 +9,11 @@
             "packages": true,
             "node_modules": true
         },
+        "files.watcherExclude": {
+            "**/.git/objects/**": true,
+            "**/.git/subtree-cache/**": true,
+            "**/node_modules/*/**": true
+        },
         "typescript.tsdk": "__ROOT__/node_modules/typescript/lib",
         "terminal.integrated.windowsEnableConpty": true,
         "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\wsl.exe"
@@ -21,6 +26,10 @@
         {
             "name": "bash-dirname",
             "path": "packages/bash-dirname"
+        },
+        {
+            "name": "bash-node-ipc",
+            "path": "packages/bash-node-ipc"
         },
         {
             "name": "chainable-api",
@@ -71,6 +80,10 @@
             "path": "packages/json-schema-to-openapi-schema"
         },
         {
+            "name": "lazy-imports",
+            "path": "packages/lazy-imports"
+        },
+        {
             "name": "listary-extension-core",
             "path": "packages/listary-extension-core"
         },
@@ -83,8 +96,20 @@
             "path": "packages/ms-graph-sandbox"
         },
         {
+            "name": "node-binaries",
+            "path": "packages/node-binaries"
+        },
+        {
             "name": "node-module-hooks",
             "path": "packages/node-module-hooks"
+        },
+        {
+            "name": "openapi-to-ts",
+            "path": "packages/openapi-to-ts"
+        },
+        {
+            "name": "plop-api",
+            "path": "packages/plop-api"
         },
         {
             "name": "preprocessor",
@@ -97,10 +122,6 @@
         {
             "name": "scripting-core",
             "path": "packages/scripting-core"
-        },
-        {
-            "name": "swc-require-hook",
-            "path": "packages/swc-require-hook"
         },
         {
             "name": "testing-core",
@@ -117,6 +138,10 @@
         {
             "name": "tsc-to",
             "path": "packages/tsc-to"
+        },
+        {
+            "name": "typescript-cached-transpile",
+            "path": "packages/typescript-cached-transpile"
         },
         {
             "name": "typescript-json-schema-extractor",

@@ -23,6 +23,7 @@ yarn-error.log
 # artifacts exist on disk.
 packages/*
 !packages/bash-dirname
+!packages/bash-node-ipc
 !packages/chainable-api
 !packages/chrome-extension-sandbox
 !packages/codegen
@@ -39,15 +40,18 @@ packages/*
 !packages/listary-extension-core
 !packages/mocha-modern
 !packages/ms-graph-sandbox
+!packages/node-binaries
 !packages/node-module-hooks
+!packages/openapi-to-ts
+!packages/plop-api
 !packages/preprocessor
 !packages/react-styled-components
 !packages/scripting-core
-!packages/swc-require-hook
 !packages/testing-core
 !packages/ts-node-to
 !packages/ts-wrapper
 !packages/tsc-to
+!packages/typescript-cached-transpile
 !packages/typescript-json-schema-extractor
 !packages/typescript-toolbelt
 !packages/typescript-yarn-pnp

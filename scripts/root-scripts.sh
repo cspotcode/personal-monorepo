@@ -26,9 +26,7 @@ fixup)
     ;;
 
 new-package)
-    mkdir "packages/$1"
-    cp -r packages/__template__/* "packages/$1"
-    yarn run fixup
+    echo "Run the plop generator instead"
     ;;
 
 focus)

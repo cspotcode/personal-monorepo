@@ -1,0 +1,9 @@
+{
+  "extends": "..",
+  "exclude": [],
+  "compilerOptions": {
+    "noEmit": false,
+    "rootDir": ".",
+    "outDir": "../dist"
+  }
+}

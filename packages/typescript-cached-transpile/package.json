@@ -1,0 +1,51 @@
+{
+  "personalMonoRepoMeta": {
+    "livesIn": "mono"
+  },
+  "name": "typescript-cached-transpile",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "dist/index",
+  "files": [
+    "dist",
+    "factory.*",
+    "src",
+    "tsconfig.json"
+  ],
+  "npmignore": [
+    ".cache",
+    ".yarnrc",
+    "example",
+    "scripts",
+    "test",
+    "yarn.lock",
+    "yarn-error.log"
+  ],
+  "homepage": "https://github.com/cspotcode/personal-monorepo/tree/master/packages/typescript-cached-transpile",
+  "bugs": "https://github.com/cspotcode/personal-monorepo/issues?labels=P:typescript-cached-transpile",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cspotcode/personal-monorepo.git"
+  },
+  "author": {
+    "name": "Andrew Bradley",
+    "url": "https://cspotcode.com"
+  },
+  "scripts": {
+    "build": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./package-scripts.sh",
+    "docs": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./package-scripts.sh",
+    "test": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./package-scripts.sh"
+  },
+  "devDependencies": {
+    "typescript": "^3.7.2"
+  },
+  "peerDependencies": {
+    "typescript": "*"
+  },
+  "dependencies": {
+    "@types/fs-extra": "^8.0.1",
+    "@types/node": "^12.12.7",
+    "fs-extra": "^8.1.0",
+    "tslib": "^1.10.0"
+  }
+}

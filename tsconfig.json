@@ -8,6 +8,9 @@
             "path": "packages/bash-dirname"
         },
         {
+            "path": "packages/bash-node-ipc"
+        },
+        {
             "path": "packages/chainable-api"
         },
         {
@@ -44,6 +47,9 @@
             "path": "packages/json-schema-to-openapi-schema"
         },
         {
+            "path": "packages/lazy-imports"
+        },
+        {
             "path": "packages/listary-extension-core"
         },
         {
@@ -53,7 +59,16 @@
             "path": "packages/ms-graph-sandbox"
         },
         {
+            "path": "packages/node-binaries"
+        },
+        {
             "path": "packages/node-module-hooks"
+        },
+        {
+            "path": "packages/openapi-to-ts"
+        },
+        {
+            "path": "packages/plop-api"
         },
         {
             "path": "packages/preprocessor"
@@ -63,9 +78,6 @@
         },
         {
             "path": "packages/scripting-core"
-        },
-        {
-            "path": "packages/swc-require-hook"
         },
         {
             "path": "packages/testing-core"
@@ -78,6 +90,9 @@
         },
         {
             "path": "packages/tsc-to"
+        },
+        {
+            "path": "packages/typescript-cached-transpile"
         },
         {
             "path": "packages/typescript-json-schema-extractor"

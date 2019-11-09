@@ -37,6 +37,22 @@ test)
     comprehensive-npmignore
     ;;
 
+prepublishOnly)
+    yarn run clean
+    yarn run build
+    yarn run test
+    set -x
+    for extraClean in \
+        tsconfig.tsbuildinfo \
+        dist/tsconfig.tsbuildinfo \
+        src/tsconfig.tsbuildinfo \
+        test/tsconfig.tsbuildinfo \
+        example/tsconfig.tsbuildinfo
+    do
+        if [[ -e "$extraClean" ]]; then rm "$extraClean" ; fi
+    done
+    ;;
+
 docs)
     # TODO render docs site
     ;;

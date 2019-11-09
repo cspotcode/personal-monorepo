@@ -42,6 +42,24 @@ function factory(plop: PlopApi) {
             return `Updated ${ focusedWorkspacePath }`;
         }]
     });
+    plop.setGenerator('new-package', {
+        description: 'Create a new package',
+        prompts: [{
+            type: 'input',
+            name: 'name',
+            message: 'Package name'
+        }],
+        actions: [
+            {
+                type: 'addMany',
+                base: 'packages/__template__',
+                templateFiles: 'packages/__template__/**',
+                globOptions: {dot: true},
+                destination: 'packages/{{name}}'
+            },
+            () => `Don't forget to run 'yarn fixup' after this.`
+        ]
+    })
 }
 
 // import { patchJsonFile } from "../packages/scripting-core/src/core";
