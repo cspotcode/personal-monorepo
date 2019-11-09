@@ -12,10 +12,10 @@ clean)
 build)
     tsc --build
     ;;
-
 prepare)
-    npm run build
-    npm run test
+    yarn clean
+    yarn build
+    yarn test
     ;;
 docs)
     invokeDefault
