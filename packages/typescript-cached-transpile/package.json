@@ -37,13 +37,13 @@
     "test": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./package-scripts.sh"
   },
   "devDependencies": {
+    "@types/fs-extra": "^8.0.1",
     "typescript": "^3.7.2"
   },
   "peerDependencies": {
     "typescript": "*"
   },
   "dependencies": {
-    "@types/fs-extra": "^8.0.1",
     "@types/node": "^12.12.7",
     "fs-extra": "^8.1.0",
     "tslib": "^1.10.0"

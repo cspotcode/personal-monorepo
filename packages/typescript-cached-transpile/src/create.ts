@@ -10,10 +10,11 @@ export interface Options {
     cachePath?: string;
 }
 
+export default create;
 export function create(opts: Options = {}): typeof Ts {
     let {
         compiler = require('typescript') as typeof Ts,
-        cachePath = Path.resolve(__dirname, '../.cache')
+        cachePath = Path.resolve(process.env.TS_CACHED_TRANSPILE_CACHE || Path.resolve(__dirname, '../.cache'))
     } = opts;
 
     const diskCache = new DiskCache(cachePath);

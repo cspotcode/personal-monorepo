@@ -24,3 +24,27 @@ Caching requires, and will *only* work, when the following requirements are met:
 * source code is the same
 * config object is the same, as determined by serializing to JSON and sha1 hashing
 * using `transpileModule`.  Won't work if you're type-checking.  (do that separately, e.g. `tsc --noEmit`)
+
+If you need to programmatically customize the behavior, put your customizations
+in a JS file:
+
+```javascript
+./my-cached-compiler.js
+const {create} = require('typescript-cached-transpile');
+module.exports = create({
+    /* options here */
+});
+```
+
+...and pass the absolute path to that file as ts-node's `compiler` option.
+
+```bash
+TS_NODE_TRANSPILE_ONLY=true TS_NODE_COMPILER=$PWD/my-cached-compiler.js ts-node ./src/index.ts
+```
+
+The cache directory can be set via environment variable `TS_CACHED_TRANSPILE_CACHE`.
+It should be an absolute path to avoid gotchas.
+
+```bash
+TS_NODE_TRANSPILE_ONLY=true TS_CACHED_TRANSPILE_CACHE=$PWD/.cache ts-node ./src/index.ts
+```
