@@ -9,6 +9,11 @@ case "$script" in
 build)
     invokeDefault
     ;;
+
+prepare)
+    npm run build
+    npm run test
+    ;;
 docs)
     invokeDefault
     ;;
