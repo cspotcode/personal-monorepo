@@ -6,8 +6,11 @@ case "$script" in
 ###<NAMES>
 
 # Delegated commands
+clean)
+    tsc --build --clean
+    ;;
 build)
-    invokeDefault
+    tsc --build
     ;;
 
 prepare)
@@ -18,7 +21,7 @@ docs)
     invokeDefault
     ;;
 test)
-    invokeDefault
+    echo "TODO no tests"
     ;;
 ###</NAMES>
 *)

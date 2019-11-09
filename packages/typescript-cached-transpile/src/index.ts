@@ -1,4 +1,4 @@
-import * as factory from './factory';
+import create from './create';
 
-const patchedTypescript = factory.create();
+const patchedTypescript = create();
 export = patchedTypescript;
