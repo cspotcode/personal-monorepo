@@ -52,3 +52,10 @@ It should be an absolute path to avoid gotchas.
 ```bash
 TS_NODE_TRANSPILE_ONLY=true TS_CACHED_TRANSPILE_CACHE=$PWD/.cache ts-node ./src/index.ts
 ```
+
+## Portable / pre-compiled cache
+
+Filenames are included in the cache keys.  Normally these are absolute.  If you want
+to bundle a pre-generated cache with your code, the cache will need to use relative
+paths instead.  Set env var `TS_CACHED_TRANSPILE_PORTABLE` to `true` to enable this
+behavior.

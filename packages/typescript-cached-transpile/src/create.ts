@@ -8,13 +8,15 @@ const pkg = require('../package');
 export interface Options {
     compiler?: typeof Ts;
     cachePath?: string;
+    portableCache?: boolean;
 }
 
 export default create;
 export function create(opts: Options = {}): typeof Ts {
     let {
         compiler = require('typescript') as typeof Ts,
-        cachePath = Path.resolve(process.env.TS_CACHED_TRANSPILE_CACHE || Path.resolve(__dirname, '../.cache'))
+        cachePath = Path.resolve(process.env.TS_CACHED_TRANSPILE_CACHE || Path.resolve(__dirname, '../.cache')),
+        portableCache = process.env.TS_CACHED_TRANSPILE_PORTABLE === 'true' || false
     } = opts;
 
     const diskCache = new DiskCache(cachePath);
@@ -41,11 +43,19 @@ export function create(opts: Options = {}): typeof Ts {
                 typescriptVersion: compiler.version,
                 ...transpileOptions.compilerOptions
             };
+            let fileName = transpileOptions.fileName;
+            if(fileName) {
+                if(portableCache) {
+                    fileName = Path.relative(cachePath, fileName);
+                }
+            } else {
+                fileName = '';
+            }
             const configSha1 = computeSha1(Buffer.from(JSON.stringify(config), 'utf8'));
-            const codeSha1 = computeSha1(Buffer.from(transpileOptions.fileName || '', 'utf8'), Buffer.from(input, 'utf8'));
+            const codeSha1 = computeSha1(Buffer.from(fileName, 'utf8'), Buffer.from(input, 'utf8'));
             const key = configSha1 + codeSha1;
             outputTextCacheKey = key + '-outputText';
-            sourceMapCacheKey = key + '-outputSourceMap';
+            sourceMapCacheKey = key + '-sourceMapText';
 
             // try loading from cache
             const cachedOutputText = diskCache.get(outputTextCacheKey);
