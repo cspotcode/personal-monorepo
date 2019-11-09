@@ -3,7 +3,7 @@
     "livesIn": "mono"
   },
   "name": "typescript-cached-transpile",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "main": "dist/index",
   "files": [
