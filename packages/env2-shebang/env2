@@ -1,13 +1,13 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Posix shell implementation of env2, for Linux and Mac
 
 # $1 is the script file.
 # We need to read line 2 of that file to extract the shebang.
 
-line=1
-while read LINE; do
-    if [ "$line" = 2 ]; then
+lineNo=1
+while IFS='' read -r line; do
+    if [ "$lineNo" = 2 ]; then
         # TODO validate that string starts with #! or //#!; extract accordingly
         firstFour="${line:0:4}"
         firstTwo="${line:0:2}"
@@ -16,7 +16,7 @@ while read LINE; do
             # Parse second shebang line; trim leading #!
             shebang="${line:2:9999}"
             break
-        else if [ "$firstFour" = "//#!" ] ; then
+        elif [ "$firstFour" = "//#!" ] ; then
             # Parse second shebang line; trim leading #!
             shebang="${line:4:9999}"
             break
@@ -24,10 +24,10 @@ while read LINE; do
     fi
 
     # skip first shebang line
-    line=2
+    lineNo=$(( $lineNo + 1 ))
 done < "$1"
 
-if [ "$line" != 2 ]; then
+if [ "$lineNo" != 2 ]; then
     # TODO fail because there's no second shebang
     printf 'Error: Second line is not a shebang\n'
     exit 1

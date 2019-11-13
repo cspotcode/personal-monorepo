@@ -21,12 +21,24 @@
   },
   "license": "MIT",
   "bin": {
-    "env2": "./env2"
+    "env2": "./env2",
+    "env2rc": "./env2rc"
   },
   "files": [
-    "env2"
+    "env2",
+    "env2rc"
   ],
   "personalMonoRepoMeta": {
     "livesIn": "mono"
-  }
+  },
+  "npmignore": [
+    ".yarnrc",
+    "yarn.lock",
+    "yarn-error.log"
+  ],
+  "scripts": {
+    "test": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./package-scripts.sh",
+    "docs": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./package-scripts.sh"
+  },
+  "main": "dist/index"
 }

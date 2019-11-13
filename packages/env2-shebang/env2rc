@@ -1,0 +1,165 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Configure shebang interpreters by convention at the root of your project
+# Then use a consistent shebang across scripts
+
+_main() {
+    _validate_env
+    _main2 "$@"
+    # At this point, the only variables set are "$root" and $__env2rc__commandLine
+    # Compile commandLine into a function
+    eval $'__env2rc__commandLine() {\n'"$__env2rc__commandLine"$' "$@"\n}\n'
+    _debug "command line=$__env2rc__commandLine"
+    # Call the function
+    __env2rc__commandLine "$@"
+    exit $?
+}
+
+# Split into a separate function from _main so we can set local variables that aren't
+# leaked to _main
+_main2() {
+    local target env2rc dir absTarget shebang matchAgainst
+    target="$1"
+    unset __env2rc__commandLine
+    unset root
+    unset shebang
+
+    # Grab containing directory of script
+    dir="$(CDPATH='' cd "$(dirname "$target")" && pwd)"
+    # Absolute path to target script
+    absTarget="$dir/$(basename "$target")"
+
+    # See if target script has a second-line shebang
+    _read_second_shebang "$target" || true
+
+    # Search up the directory tree for .env2rc
+    while true
+    do
+        if [ -e "$dir/.env2rc" ]
+        then
+            # matchAgainst: If shebang is not set, pass root-relative path to target script
+            if \
+                matchAgainst="${shebang:-${absTarget/$dir/}}" \
+                env2rc="$dir/.env2rc" \
+                _find_match_in_rc_file
+            then
+                # shellcheck disable=SC2034
+                root="$dir"
+                return 0
+            fi # else fall-through
+        fi
+        if [ "$dir" = / ]
+        then
+            # couldn't find a matching pattern; error out
+            _die 'Unable to find a matching interpreter in any .env2rc'
+        fi
+        dir="$(dirname "$dir")"
+    done
+}
+
+# Try to find a matching `commandLine` by searching the given .env2rc file
+# Inputs:
+#   matchAgainst: string to match glob patterns against
+#   env2rc: path to env2rc file
+# Outputs:
+#   __env2rc__commandLine: set if it succeeds (will return 0 in this case)
+_find_match_in_rc_file() {
+    local line pattern commandLine
+    _debug "Matching against=$matchAgainst"
+
+    # For each line in the .env2rc file
+    while IFS='' read -r line
+    do
+        # Skip comments
+        pattern="^ *#"
+        if [[ "$line" =~ $pattern ]]
+        then
+            continue
+        fi
+        # Skip blank lines
+        pattern="^ *$"
+        if [[ "$line" =~ $pattern ]]
+        then
+            continue
+        fi
+        # Split line into glob and command-line
+        if ! [[ "$line" =~ ^(.*[^\\])=(.*)$ ]]
+        then
+            _die 'Syntax error in .env2rc'
+        fi
+        pattern="${BASH_REMATCH[1]}"
+        commandLine="${BASH_REMATCH[2]}"
+
+        _debug "Pattern=$pattern"
+        _debug "Command Line=$commandLine"
+
+        # check if pattern matches target shebang or relative path
+        # shellcheck disable=SC2053
+        if [[ "$matchAgainst" = $pattern ]]
+        then
+            __env2rc__commandLine="$commandLine"
+            return 0
+        fi
+    done < "$env2rc"
+    return 1
+}
+
+# NOTE: link to fnmatch implementation using a "case" block: http://www.etalabs.net/sh_tricks.html
+
+# Terminate with an error message
+_die() {
+    echo "[env2rc]" "$@" >&2
+    exit 1
+}
+
+# Attempt to read the second line of a file as a shebang
+# If successful, sets `shebang` variable and returns 0
+# otherwise returns 1
+_read_second_shebang() {
+    # $1 is the script file.
+    # We need to read line 2 of that file to extract the shebang.
+
+    local line firstFour firstTwo
+    lineNo=1
+    while IFS='' read -r line
+    do
+        if [ "$lineNo" = 2 ]
+        then
+            # Validate that string starts with #! or //#!; extract accordingly
+            firstFour="${line:0:4}"
+            firstTwo="${line:0:2}"
+
+            if [ "$firstTwo" = "#!" ]
+            then
+                # Parse second shebang line; trim leading #!
+                shebang="${line:2:9999}"
+                return 0
+            elif [ "$firstFour" = "//#!" ]
+            then
+                # Parse second shebang line; trim leading #!
+                shebang="${line:4:9999}"
+                return 0
+            fi
+            # Second line isn't a shebang; fail
+            return 1
+        fi
+
+        lineNo=2
+    done < "$1"
+}
+
+_debug() {
+    # Uncomment for debug logging
+    # echo "$@" >&2
+    true
+}
+
+# Make sure the linux env has necessary dependencies
+_validate_env() {
+    command -v basename &>/dev/null || die 'Env missing basename executable'
+    command -v dirname &>/dev/null || die 'Env missing dirname executable'
+}
+
+
+_main "$@"

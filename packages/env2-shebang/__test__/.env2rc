@@ -1,0 +1,12 @@
+# Comments allowed
+
+# Do not use this pattern
+/use-foo=doesnotexist
+
+*/use-foo=say-foo
+*/use-bar=say-bar
+*/use-baz="$root/bin2/say-baz"
+*/use-biff="$root/bin2/say-biff"
+
+# Declare interpreter by convention
+foo=say-foo by-convention
