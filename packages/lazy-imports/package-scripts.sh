@@ -6,6 +6,9 @@ case "$script" in
 ###<NAMES>
 
 # Delegated commands
+prepare)
+    yarn build
+    ;;
 build)
     invokeDefault
     ;;

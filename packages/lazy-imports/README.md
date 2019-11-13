@@ -66,7 +66,7 @@ for external codebases.
 import 'lazy-imports/enable';
 //... imports ...
 require('lazy-imports/disable');
-require('lazy-imports').enableForDirectory(__dirname);
+require('lazy-imports').enableForPrefix(`${ __dirname }/`);
 ```
 
 ---

@@ -8,5 +8,9 @@
   "exclude": [
     "src",
     "test"
-  ]
+  ],
+  "compilerOptions": {
+    "importHelpers": false,
+    "preserveConstEnums": true
+  }
 }
