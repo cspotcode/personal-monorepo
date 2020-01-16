@@ -28,7 +28,7 @@
     "ts-node": "*"
   },
   "devDependencies": {
-    "ts-node": "^8.0.1"
+    "ts-node": "^8.6.2"
   },
   "files": [
     "bin.js",
@@ -38,7 +38,7 @@
   "personalMonoRepoMeta": {
     "livesIn": "mono"
   },
-  "main": "dist/index.js",
+  "main": "dist/index",
   "types": "dist/index.d.ts",
   "npmignore": [
     ".yarnrc",

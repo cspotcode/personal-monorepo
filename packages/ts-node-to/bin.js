@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
+var tsNodeBin = require('ts-node/dist/bin.js');
+
 // Prepend --transpile-only to args
 // We could use the environment variable, but that would leak and isn't strictly necessary.
-process.argv.splice(2, 0, '--transpile-only');
-require('ts-node/dist/bin.js');
+tsNodeBin.main(['--transpile-only'].concat(process.argv.slice(2)));
