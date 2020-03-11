@@ -72,3 +72,14 @@ esac
 
 time_end="$( date -Ins --utc )"
 printf "Started: %s\nEnded:   %s\n" "$time_start" "$time_end"
+
+
+#
+# Only reason to split up workflow steps is to prevent leaking secrets.
+# Even then it doesn't really matter since only local repo pushes will run with
+# abradley credentials.
+#
+# Two workflow steps:
+# - bootstrap, build, test
+# - publish template, publish npm modules, publish docs
+#

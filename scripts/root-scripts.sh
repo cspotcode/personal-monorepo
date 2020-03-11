@@ -15,6 +15,12 @@ if [ "$script" = "" ] ; then
     shift
 fi
 
+[[ "$npm_execpath" =~ 'yarn' ]] || {
+    echo 'Use yarn, not npm'
+    echo ''
+    exit 1
+}
+
 function isWsl {
     [ -f "/proc/version" ] && [[ "$(cat /proc/version)" =~ Microsoft ]]
 }
@@ -65,6 +71,9 @@ dump-env)
     export
     ;;
 
+preinstall)
+    true
+    ;;
 # _version-this-package)
 #     pushd ../..
 #     yarn run version-package "$npm_package_name" "$@"

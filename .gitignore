@@ -32,6 +32,7 @@ packages/*
 !packages/difflib
 !packages/env2-shebang
 !packages/gdocs-to-markdown
+!packages/github-sdk
 !packages/html-comment-preprocessor
 !packages/ignore-preprocessor
 !packages/js-to-ts
@@ -43,6 +44,7 @@ packages/*
 !packages/node-binaries
 !packages/node-module-hooks
 !packages/openapi-to-ts
+!packages/pkg-release
 !packages/plop-api
 !packages/preprocessor
 !packages/react-styled-components

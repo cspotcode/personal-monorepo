@@ -1,3 +1,4 @@
+// @ts-nocheck
 export = factory;
 import * as _ from 'lodash';
 import Path from 'path';
@@ -5,16 +6,16 @@ import fs from 'fs';
 import * as nodePlop from 'node-plop';
 type PlopApi = ReturnType<typeof nodePlop['default']>;
 function factory(plop: PlopApi) {
+    const workspaceTemplatePath = Path.join(__dirname, 'personal-monorepo.template.code-workspace');
     const workspacePath = Path.join(__dirname, 'personal-monorepo.code-workspace');
-    const focusedWorkspacePath = Path.join(__dirname, 'personal-monorepo-focused.code-workspace');
-    const workspace = JSON.parse(fs.readFileSync(workspacePath, 'utf8'));
-    let focusedWorkspace: any = {folders: []};
+    const workspaceTemplate = JSON.parse(fs.readFileSync(workspaceTemplatePath, 'utf8'));
+    let workspace: any = {folders: []};
     try {
-        focusedWorkspace = JSON.parse(fs.readFileSync(focusedWorkspacePath, 'utf8'));
+        workspace = JSON.parse(fs.readFileSync(workspacePath, 'utf8'));
     } catch {}
     type Folder = {name: string, path: string};
-    const allFolders: Folder[] = [...workspace.folders, ...workspace._folders];
-    const focusedFolders: Folder[] = focusedWorkspace.folders;
+    const allFolders: Folder[] = [...workspaceTemplate.folders, ...workspaceTemplate._folders];
+    const focusedFolders: Folder[] = workspace.folders;
     const allChoices = allFolders.map(v => {
         return {
             name: v.name,
@@ -33,10 +34,16 @@ function factory(plop: PlopApi) {
         }],
         actions: [(_answers, config, plopfileApi) => {
             const answers = _answers as {packages: Folder[]};
-            fs.writeFileSync(focusedWorkspacePath, JSON.stringify(
+            fs.writeFileSync(workspacePath, JSON.stringify(
                 {
-                    ...workspace, 
-                    folders: answers.packages
+                    ...workspaceTemplate, 
+                    folders: [
+                        {
+                            "name": "<empty>",
+                            "path": "<empty>"
+                        },
+                        ...answers.packages
+                    ]
                 }
             ));
             return `Updated ${ focusedWorkspacePath }`;

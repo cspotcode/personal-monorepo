@@ -47,7 +47,7 @@ const {patchJsonFile, writeTextFile, readTextFile, tryFilterMap, readJsonFile, e
  * TODO update tsconfig references based on declared deps on peer projects.
  */
 
-export const workspaceFilename = 'personal-monorepo.code-workspace';
+export const workspaceFilename = 'personal-monorepo.template.code-workspace';
 
 function main() {
 

@@ -1,168 +1,21 @@
-{
-    "settings": {
-        "files.exclude": {
-            "**/.git": true,
-            "**/.svn": true,
-            "**/.hg": true,
-            "**/CVS": true,
-            "**/.DS_Store": true,
-            "packages": true,
-            "node_modules": true
+{"settings":{"files.exclude":{"**/.git":true,"**/.svn":true,"**/.hg":true,"**/CVS":true,"**/.DS_Store":true,"packages":true,"node_modules":true},"files.watcherExclude":{"**/.git/objects/**":true,"**/.git/subtree-cache/**":true,"**/node_modules/*/**":true},"typescript.tsdk":"__ROOT__/node_modules/typescript/lib","terminal.integrated.windowsEnableConpty":true,"terminal.integrated.shell.windows":"C:\\WINDOWS\\System32\\wsl.exe"},"folders":[
+        {
+            "name": "<empty>",
+            "path": "<empty>"
         },
-        "files.watcherExclude": {
-            "**/.git/objects/**": true,
-            "**/.git/subtree-cache/**": true,
-            "**/node_modules/*/**": true
-        },
-        "typescript.tsdk": "__ROOT__/node_modules/typescript/lib",
-        "terminal.integrated.windowsEnableConpty": true,
-        "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\wsl.exe"
-    },
-    "folders": [
         {
             "name": "__template__",
             "path": "packages/__template__"
         },
         {
-            "name": "bash-dirname",
-            "path": "packages/bash-dirname"
-        },
-        {
-            "name": "bash-node-ipc",
-            "path": "packages/bash-node-ipc"
-        },
-        {
-            "name": "chainable-api",
-            "path": "packages/chainable-api"
-        },
-        {
-            "name": "chrome-extension-sandbox",
-            "path": "packages/chrome-extension-sandbox"
-        },
-        {
-            "name": "codegen",
-            "path": "packages/codegen"
-        },
-        {
-            "name": "comprehensive-npmignore",
-            "path": "packages/comprehensive-npmignore"
-        },
-        {
-            "name": "core",
-            "path": "packages/core"
-        },
-        {
-            "name": "difflib",
-            "path": "packages/difflib"
-        },
-        {
-            "name": "env2-shebang",
-            "path": "packages/env2-shebang"
-        },
-        {
-            "name": "gdocs-to-markdown",
-            "path": "packages/gdocs-to-markdown"
-        },
-        {
-            "name": "html-comment-preprocessor",
-            "path": "packages/html-comment-preprocessor"
-        },
-        {
-            "name": "ignore-preprocessor",
-            "path": "packages/ignore-preprocessor"
-        },
-        {
-            "name": "js-to-ts",
-            "path": "packages/js-to-ts"
-        },
-        {
-            "name": "json-schema-to-openapi-schema",
-            "path": "packages/json-schema-to-openapi-schema"
-        },
-        {
-            "name": "lazy-imports",
-            "path": "packages/lazy-imports"
-        },
-        {
-            "name": "listary-extension-core",
-            "path": "packages/listary-extension-core"
-        },
-        {
-            "name": "mocha-modern",
-            "path": "packages/mocha-modern"
-        },
-        {
-            "name": "ms-graph-sandbox",
-            "path": "packages/ms-graph-sandbox"
-        },
-        {
-            "name": "node-binaries",
-            "path": "packages/node-binaries"
-        },
-        {
-            "name": "node-module-hooks",
-            "path": "packages/node-module-hooks"
-        },
-        {
-            "name": "openapi-to-ts",
-            "path": "packages/openapi-to-ts"
-        },
-        {
-            "name": "plop-api",
-            "path": "packages/plop-api"
-        },
-        {
-            "name": "preprocessor",
-            "path": "packages/preprocessor"
-        },
-        {
-            "name": "react-styled-components",
-            "path": "packages/react-styled-components"
-        },
-        {
-            "name": "scripting-core",
-            "path": "packages/scripting-core"
-        },
-        {
-            "name": "testing-core",
-            "path": "packages/testing-core"
-        },
-        {
-            "name": "ts-node-to",
-            "path": "packages/ts-node-to"
-        },
-        {
-            "name": "ts-wrapper",
-            "path": "packages/ts-wrapper"
-        },
-        {
-            "name": "tsc-to",
-            "path": "packages/tsc-to"
-        },
-        {
-            "name": "typescript-cached-transpile",
-            "path": "packages/typescript-cached-transpile"
-        },
-        {
-            "name": "typescript-json-schema-extractor",
-            "path": "packages/typescript-json-schema-extractor"
-        },
-        {
-            "name": "typescript-toolbelt",
-            "path": "packages/typescript-toolbelt"
-        },
-        {
-            "name": "typescript-yarn-pnp",
-            "path": "packages/typescript-yarn-pnp"
-        },
-        {
-            "name": "webpack-config-prefabs",
-            "path": "packages/webpack-config-prefabs"
+            "name": "github-sdk",
+            "path": "packages/github-sdk"
         },
         {
             "name": "__ROOT__",
             "path": "."
+        },
+        {
+            "path": "/c/Users/abradley/Documents/Personal-dev/@cspotcode/github-graphql-client"
         }
-    ],
-    "_folders": []
-}
+    ],"_folders":[]}
