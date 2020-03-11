@@ -1,0 +1,5 @@
+mutation removeEnterpriseOrganization($input: RemoveEnterpriseOrganizationInput!){
+    removeEnterpriseOrganization(input: $input){
+        clientMutationId
+    }
+}

@@ -1,0 +1,5 @@
+mutation minimizeComment($input: MinimizeCommentInput!){
+    minimizeComment(input: $input){
+        clientMutationId
+    }
+}

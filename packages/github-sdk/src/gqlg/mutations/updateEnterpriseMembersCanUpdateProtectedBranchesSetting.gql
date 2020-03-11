@@ -1,0 +1,6 @@
+mutation updateEnterpriseMembersCanUpdateProtectedBranchesSetting($input: UpdateEnterpriseMembersCanUpdateProtectedBranchesSettingInput!){
+    updateEnterpriseMembersCanUpdateProtectedBranchesSetting(input: $input){
+        clientMutationId
+        message
+    }
+}

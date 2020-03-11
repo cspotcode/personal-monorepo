@@ -1,0 +1,5 @@
+mutation acceptTopicSuggestion($input: AcceptTopicSuggestionInput!){
+    acceptTopicSuggestion(input: $input){
+        clientMutationId
+    }
+}

@@ -1,0 +1,5 @@
+mutation createCheckSuite($input: CreateCheckSuiteInput!){
+    createCheckSuite(input: $input){
+        clientMutationId
+    }
+}

@@ -1,0 +1,6 @@
+mutation acceptEnterpriseAdministratorInvitation($input: AcceptEnterpriseAdministratorInvitationInput!){
+    acceptEnterpriseAdministratorInvitation(input: $input){
+        clientMutationId
+        message
+    }
+}

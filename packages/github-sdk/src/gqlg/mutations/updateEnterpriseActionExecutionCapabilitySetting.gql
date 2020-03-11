@@ -1,0 +1,6 @@
+mutation updateEnterpriseActionExecutionCapabilitySetting($input: UpdateEnterpriseActionExecutionCapabilitySettingInput!){
+    updateEnterpriseActionExecutionCapabilitySetting(input: $input){
+        clientMutationId
+        message
+    }
+}

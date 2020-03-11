@@ -1,0 +1,5 @@
+mutation createRef($input: CreateRefInput!){
+    createRef(input: $input){
+        clientMutationId
+    }
+}

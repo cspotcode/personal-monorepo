@@ -1,0 +1,5 @@
+mutation importProject($input: ImportProjectInput!){
+    importProject(input: $input){
+        clientMutationId
+    }
+}

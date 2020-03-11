@@ -1,0 +1,13 @@
+query marketplaceCategories($includeCategories: [String!], $excludeEmpty: Boolean, $excludeSubcategories: Boolean){
+    marketplaceCategories(includeCategories: $includeCategories, excludeEmpty: $excludeEmpty, excludeSubcategories: $excludeSubcategories){
+        description
+        howItWorks
+        id
+        name
+        primaryListingCount
+        resourcePath
+        secondaryListingCount
+        slug
+        url
+    }
+}

@@ -1,0 +1,6 @@
+mutation deletePackageVersion($input: DeletePackageVersionInput!){
+    deletePackageVersion(input: $input){
+        clientMutationId
+        success
+    }
+}

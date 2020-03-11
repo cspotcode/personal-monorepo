@@ -1,0 +1,5 @@
+mutation transferIssue($input: TransferIssueInput!){
+    transferIssue(input: $input){
+        clientMutationId
+    }
+}

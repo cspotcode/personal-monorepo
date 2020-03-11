@@ -1,0 +1,6 @@
+mutation updateEnterpriseMembersCanMakePurchasesSetting($input: UpdateEnterpriseMembersCanMakePurchasesSettingInput!){
+    updateEnterpriseMembersCanMakePurchasesSetting(input: $input){
+        clientMutationId
+        message
+    }
+}

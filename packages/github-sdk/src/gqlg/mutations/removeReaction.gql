@@ -1,0 +1,5 @@
+mutation removeReaction($input: RemoveReactionInput!){
+    removeReaction(input: $input){
+        clientMutationId
+    }
+}

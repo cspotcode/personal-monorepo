@@ -1,0 +1,5 @@
+mutation createContentAttachment($input: CreateContentAttachmentInput!){
+    createContentAttachment(input: $input){
+        clientMutationId
+    }
+}

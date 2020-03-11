@@ -1,0 +1,5 @@
+mutation updateIpAllowListEntry($input: UpdateIpAllowListEntryInput!){
+    updateIpAllowListEntry(input: $input){
+        clientMutationId
+    }
+}

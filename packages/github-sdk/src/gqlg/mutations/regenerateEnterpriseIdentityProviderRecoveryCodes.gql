@@ -1,0 +1,5 @@
+mutation regenerateEnterpriseIdentityProviderRecoveryCodes($input: RegenerateEnterpriseIdentityProviderRecoveryCodesInput!){
+    regenerateEnterpriseIdentityProviderRecoveryCodes(input: $input){
+        clientMutationId
+    }
+}

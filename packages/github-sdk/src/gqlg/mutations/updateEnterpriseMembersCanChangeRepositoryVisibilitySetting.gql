@@ -1,0 +1,6 @@
+mutation updateEnterpriseMembersCanChangeRepositoryVisibilitySetting($input: UpdateEnterpriseMembersCanChangeRepositoryVisibilitySettingInput!){
+    updateEnterpriseMembersCanChangeRepositoryVisibilitySetting(input: $input){
+        clientMutationId
+        message
+    }
+}

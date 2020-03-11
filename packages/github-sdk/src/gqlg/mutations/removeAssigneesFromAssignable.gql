@@ -1,0 +1,5 @@
+mutation removeAssigneesFromAssignable($input: RemoveAssigneesFromAssignableInput!){
+    removeAssigneesFromAssignable(input: $input){
+        clientMutationId
+    }
+}

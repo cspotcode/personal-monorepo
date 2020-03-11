@@ -1,0 +1,5 @@
+mutation declineTopicSuggestion($input: DeclineTopicSuggestionInput!){
+    declineTopicSuggestion(input: $input){
+        clientMutationId
+    }
+}

@@ -1,0 +1,5 @@
+mutation removeOutsideCollaborator($input: RemoveOutsideCollaboratorInput!){
+    removeOutsideCollaborator(input: $input){
+        clientMutationId
+    }
+}

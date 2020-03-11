@@ -1,0 +1,13 @@
+query marketplaceCategory($slug: String!, $useTopicAliases: Boolean){
+    marketplaceCategory(slug: $slug, useTopicAliases: $useTopicAliases){
+        description
+        howItWorks
+        id
+        name
+        primaryListingCount
+        resourcePath
+        secondaryListingCount
+        slug
+        url
+    }
+}

@@ -1,0 +1,5 @@
+mutation createCheckRun($input: CreateCheckRunInput!){
+    createCheckRun(input: $input){
+        clientMutationId
+    }
+}

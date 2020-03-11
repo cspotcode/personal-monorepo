@@ -1,0 +1,5 @@
+mutation lockLockable($input: LockLockableInput!){
+    lockLockable(input: $input){
+        clientMutationId
+    }
+}

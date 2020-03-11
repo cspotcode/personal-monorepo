@@ -1,0 +1,5 @@
+mutation updateProjectColumn($input: UpdateProjectColumnInput!){
+    updateProjectColumn(input: $input){
+        clientMutationId
+    }
+}

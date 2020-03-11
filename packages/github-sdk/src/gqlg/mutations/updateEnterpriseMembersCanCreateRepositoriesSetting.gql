@@ -1,0 +1,6 @@
+mutation updateEnterpriseMembersCanCreateRepositoriesSetting($input: UpdateEnterpriseMembersCanCreateRepositoriesSettingInput!){
+    updateEnterpriseMembersCanCreateRepositoriesSetting(input: $input){
+        clientMutationId
+        message
+    }
+}

@@ -1,0 +1,5 @@
+mutation mergeBranch($input: MergeBranchInput!){
+    mergeBranch(input: $input){
+        clientMutationId
+    }
+}

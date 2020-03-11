@@ -1,0 +1,5 @@
+mutation cloneTemplateRepository($input: CloneTemplateRepositoryInput!){
+    cloneTemplateRepository(input: $input){
+        clientMutationId
+    }
+}

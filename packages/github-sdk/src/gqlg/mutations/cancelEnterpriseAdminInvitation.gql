@@ -1,0 +1,6 @@
+mutation cancelEnterpriseAdminInvitation($input: CancelEnterpriseAdminInvitationInput!){
+    cancelEnterpriseAdminInvitation(input: $input){
+        clientMutationId
+        message
+    }
+}

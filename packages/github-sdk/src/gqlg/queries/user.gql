@@ -1,0 +1,35 @@
+query user($type: PinnableItemType, $size: Int, $login: String!){
+    user(login: $login){
+        anyPinnableItems(type: $type)
+        avatarUrl(size: $size)
+        bio
+        bioHTML
+        company
+        companyHTML
+        createdAt
+        databaseId
+        email
+        id
+        isBountyHunter
+        isCampusExpert
+        isDeveloperProgramMember
+        isEmployee
+        isHireable
+        isSiteAdmin
+        isViewer
+        location
+        login
+        name
+        pinnedItemsRemaining
+        projectsResourcePath
+        projectsUrl
+        resourcePath
+        updatedAt
+        url
+        viewerCanChangePinnedItems
+        viewerCanCreateProjects
+        viewerCanFollow
+        viewerIsFollowing
+        websiteUrl
+    }
+}

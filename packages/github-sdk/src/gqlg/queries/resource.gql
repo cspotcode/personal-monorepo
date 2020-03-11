@@ -1,0 +1,6 @@
+query resource($url: URI!){
+    resource(url: $url){
+        resourcePath
+        url
+    }
+}

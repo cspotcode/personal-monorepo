@@ -1,0 +1,5 @@
+mutation createEnterpriseOrganization($input: CreateEnterpriseOrganizationInput!){
+    createEnterpriseOrganization(input: $input){
+        clientMutationId
+    }
+}

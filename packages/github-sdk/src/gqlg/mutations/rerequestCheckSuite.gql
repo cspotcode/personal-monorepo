@@ -1,0 +1,5 @@
+mutation rerequestCheckSuite($input: RerequestCheckSuiteInput!){
+    rerequestCheckSuite(input: $input){
+        clientMutationId
+    }
+}

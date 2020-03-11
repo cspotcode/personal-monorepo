@@ -1,0 +1,5 @@
+mutation moveProjectCard($input: MoveProjectCardInput!){
+    moveProjectCard(input: $input){
+        clientMutationId
+    }
+}

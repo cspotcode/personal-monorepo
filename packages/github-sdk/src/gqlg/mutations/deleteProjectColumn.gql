@@ -1,0 +1,6 @@
+mutation deleteProjectColumn($input: DeleteProjectColumnInput!){
+    deleteProjectColumn(input: $input){
+        clientMutationId
+        deletedColumnId
+    }
+}

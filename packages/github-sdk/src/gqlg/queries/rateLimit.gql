@@ -1,0 +1,9 @@
+query rateLimit($dryRun: Boolean){
+    rateLimit(dryRun: $dryRun){
+        cost
+        limit
+        nodeCount
+        remaining
+        resetAt
+    }
+}

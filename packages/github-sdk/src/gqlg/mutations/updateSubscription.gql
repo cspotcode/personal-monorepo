@@ -1,0 +1,5 @@
+mutation updateSubscription($input: UpdateSubscriptionInput!){
+    updateSubscription(input: $input){
+        clientMutationId
+    }
+}

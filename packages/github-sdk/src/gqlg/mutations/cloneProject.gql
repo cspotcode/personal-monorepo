@@ -1,0 +1,6 @@
+mutation cloneProject($input: CloneProjectInput!){
+    cloneProject(input: $input){
+        clientMutationId
+        jobStatusId
+    }
+}

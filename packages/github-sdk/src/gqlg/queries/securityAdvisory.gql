@@ -1,0 +1,15 @@
+query securityAdvisory($ghsaId: String!){
+    securityAdvisory(ghsaId: $ghsaId){
+        databaseId
+        description
+        ghsaId
+        id
+        origin
+        permalink
+        publishedAt
+        severity
+        summary
+        updatedAt
+        withdrawnAt
+    }
+}

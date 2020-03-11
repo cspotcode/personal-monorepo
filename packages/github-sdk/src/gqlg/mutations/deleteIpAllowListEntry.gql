@@ -1,0 +1,5 @@
+mutation deleteIpAllowListEntry($input: DeleteIpAllowListEntryInput!){
+    deleteIpAllowListEntry(input: $input){
+        clientMutationId
+    }
+}

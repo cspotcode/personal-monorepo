@@ -1,0 +1,5 @@
+mutation pinIssue($input: PinIssueInput!){
+    pinIssue(input: $input){
+        clientMutationId
+    }
+}

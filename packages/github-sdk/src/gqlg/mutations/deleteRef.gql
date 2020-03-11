@@ -1,0 +1,5 @@
+mutation deleteRef($input: DeleteRefInput!){
+    deleteRef(input: $input){
+        clientMutationId
+    }
+}

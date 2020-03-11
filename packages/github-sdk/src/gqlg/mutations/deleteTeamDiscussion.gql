@@ -1,0 +1,5 @@
+mutation deleteTeamDiscussion($input: DeleteTeamDiscussionInput!){
+    deleteTeamDiscussion(input: $input){
+        clientMutationId
+    }
+}

@@ -1,0 +1,5 @@
+mutation updateRepository($input: UpdateRepositoryInput!){
+    updateRepository(input: $input){
+        clientMutationId
+    }
+}

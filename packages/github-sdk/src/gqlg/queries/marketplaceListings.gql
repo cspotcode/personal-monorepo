@@ -1,0 +1,5 @@
+query marketplaceListings($after: String, $before: String, $first: Int, $last: Int, $categorySlug: String, $useTopicAliases: Boolean, $viewerCanAdmin: Boolean, $adminId: ID, $organizationId: ID, $allStates: Boolean, $slugs: [String], $primaryCategoryOnly: Boolean, $withFreeTrialsOnly: Boolean){
+    marketplaceListings(after: $after, before: $before, first: $first, last: $last, categorySlug: $categorySlug, useTopicAliases: $useTopicAliases, viewerCanAdmin: $viewerCanAdmin, adminId: $adminId, organizationId: $organizationId, allStates: $allStates, slugs: $slugs, primaryCategoryOnly: $primaryCategoryOnly, withFreeTrialsOnly: $withFreeTrialsOnly){
+        totalCount
+    }
+}

@@ -1,0 +1,56 @@
+query marketplaceListing($size: Int, $slug: String!){
+    marketplaceListing(slug: $slug){
+        companyUrl
+        configurationResourcePath
+        configurationUrl
+        documentationUrl
+        extendedDescription
+        extendedDescriptionHTML
+        fullDescription
+        fullDescriptionHTML
+        hasPublishedFreeTrialPlans
+        hasTermsOfService
+        howItWorks
+        howItWorksHTML
+        id
+        installationUrl
+        installedForViewer
+        isArchived
+        isDraft
+        isPaid
+        isPublic
+        isRejected
+        isUnverified
+        isUnverifiedPending
+        isVerificationPendingFromDraft
+        isVerificationPendingFromUnverified
+        isVerified
+        logoBackgroundColor
+        logoUrl(size: $size)
+        name
+        normalizedShortDescription
+        pricingUrl
+        privacyPolicyUrl
+        resourcePath
+        screenshotUrls
+        shortDescription
+        slug
+        statusUrl
+        supportEmail
+        supportUrl
+        termsOfServiceUrl
+        url
+        viewerCanAddPlans
+        viewerCanApprove
+        viewerCanDelist
+        viewerCanEdit
+        viewerCanEditCategories
+        viewerCanEditPlans
+        viewerCanRedraft
+        viewerCanReject
+        viewerCanRequestApproval
+        viewerHasPurchased
+        viewerHasPurchasedForAllOrganizations
+        viewerIsListingAdmin
+    }
+}

@@ -1,0 +1,5 @@
+mutation updateTeamReviewAssignment($input: UpdateTeamReviewAssignmentInput!){
+    updateTeamReviewAssignment(input: $input){
+        clientMutationId
+    }
+}

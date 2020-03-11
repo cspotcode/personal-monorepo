@@ -1,0 +1,6 @@
+mutation updateEnterpriseMembersCanDeleteIssuesSetting($input: UpdateEnterpriseMembersCanDeleteIssuesSettingInput!){
+    updateEnterpriseMembersCanDeleteIssuesSetting(input: $input){
+        clientMutationId
+        message
+    }
+}

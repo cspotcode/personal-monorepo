@@ -1,0 +1,5 @@
+mutation updateEnterpriseProfile($input: UpdateEnterpriseProfileInput!){
+    updateEnterpriseProfile(input: $input){
+        clientMutationId
+    }
+}

@@ -1,0 +1,6 @@
+mutation updateEnterpriseAllowPrivateRepositoryForkingSetting($input: UpdateEnterpriseAllowPrivateRepositoryForkingSettingInput!){
+    updateEnterpriseAllowPrivateRepositoryForkingSetting(input: $input){
+        clientMutationId
+        message
+    }
+}

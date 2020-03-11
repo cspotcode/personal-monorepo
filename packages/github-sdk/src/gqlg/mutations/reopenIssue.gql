@@ -1,0 +1,5 @@
+mutation reopenIssue($input: ReopenIssueInput!){
+    reopenIssue(input: $input){
+        clientMutationId
+    }
+}

@@ -1,0 +1,5 @@
+mutation addStar($input: AddStarInput!){
+    addStar(input: $input){
+        clientMutationId
+    }
+}

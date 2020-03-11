@@ -1,0 +1,6 @@
+mutation updateEnterpriseTeamDiscussionsSetting($input: UpdateEnterpriseTeamDiscussionsSettingInput!){
+    updateEnterpriseTeamDiscussionsSetting(input: $input){
+        clientMutationId
+        message
+    }
+}

@@ -1,0 +1,5 @@
+mutation updateCheckSuitePreferences($input: UpdateCheckSuitePreferencesInput!){
+    updateCheckSuitePreferences(input: $input){
+        clientMutationId
+    }
+}

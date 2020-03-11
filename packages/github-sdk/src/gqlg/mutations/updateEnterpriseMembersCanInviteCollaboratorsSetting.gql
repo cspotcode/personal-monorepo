@@ -1,0 +1,6 @@
+mutation updateEnterpriseMembersCanInviteCollaboratorsSetting($input: UpdateEnterpriseMembersCanInviteCollaboratorsSettingInput!){
+    updateEnterpriseMembersCanInviteCollaboratorsSetting(input: $input){
+        clientMutationId
+        message
+    }
+}

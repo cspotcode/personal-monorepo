@@ -1,0 +1,6 @@
+mutation updateEnterpriseOrganizationProjectsSetting($input: UpdateEnterpriseOrganizationProjectsSettingInput!){
+    updateEnterpriseOrganizationProjectsSetting(input: $input){
+        clientMutationId
+        message
+    }
+}

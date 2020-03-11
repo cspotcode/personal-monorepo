@@ -1,0 +1,5 @@
+query nodes($ids: [ID!]!){
+    nodes(ids: $ids){
+        id
+    }
+}

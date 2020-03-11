@@ -1,0 +1,6 @@
+mutation updateEnterpriseMembersCanDeleteRepositoriesSetting($input: UpdateEnterpriseMembersCanDeleteRepositoriesSettingInput!){
+    updateEnterpriseMembersCanDeleteRepositoriesSetting(input: $input){
+        clientMutationId
+        message
+    }
+}

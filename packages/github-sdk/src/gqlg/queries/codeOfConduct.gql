@@ -1,0 +1,10 @@
+query codeOfConduct($key: String!){
+    codeOfConduct(key: $key){
+        body
+        id
+        key
+        name
+        resourcePath
+        url
+    }
+}

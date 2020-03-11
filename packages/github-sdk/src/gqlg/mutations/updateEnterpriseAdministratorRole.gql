@@ -1,0 +1,6 @@
+mutation updateEnterpriseAdministratorRole($input: UpdateEnterpriseAdministratorRoleInput!){
+    updateEnterpriseAdministratorRole(input: $input){
+        clientMutationId
+        message
+    }
+}

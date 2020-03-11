@@ -1,0 +1,7 @@
+query topic($name: String!){
+    topic(name: $name){
+        id
+        name
+        viewerHasStarred
+    }
+}

@@ -1,0 +1,54 @@
+mutation updateIpAllowListEnabledSetting($size: Int, $type: PinnableItemType, $size1: Int, $input: UpdateIpAllowListEnabledSettingInput!){
+    updateIpAllowListEnabledSetting(input: $input){
+        clientMutationId
+        owner{
+            ... on Enterprise {
+                avatarUrl(size: $size)
+                createdAt
+                databaseId
+                description
+                descriptionHTML
+                id
+                location
+                name
+                resourcePath
+                url
+                viewerIsAdmin
+                websiteUrl
+            }
+            ... on Organization {
+                anyPinnableItems(type: $type)
+                avatarUrl(size: $size1)
+                createdAt
+                databaseId
+                description
+                descriptionHTML
+                email
+                id
+                isVerified
+                location
+                login
+                name
+                newTeamResourcePath
+                newTeamUrl
+                organizationBillingEmail
+                pinnedItemsRemaining
+                projectsResourcePath
+                projectsUrl
+                requiresTwoFactorAuthentication
+                resourcePath
+                teamsResourcePath
+                teamsUrl
+                updatedAt
+                url
+                viewerCanAdminister
+                viewerCanChangePinnedItems
+                viewerCanCreateProjects
+                viewerCanCreateRepositories
+                viewerCanCreateTeams
+                viewerIsAMember
+                websiteUrl
+            }
+        }
+    }
+}

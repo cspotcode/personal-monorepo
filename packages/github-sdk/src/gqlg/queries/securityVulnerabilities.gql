@@ -1,0 +1,5 @@
+query securityVulnerabilities($orderBy: SecurityVulnerabilityOrder, $ecosystem: SecurityAdvisoryEcosystem, $package: String, $severities: [SecurityAdvisorySeverity!], $after: String, $before: String, $first: Int, $last: Int){
+    securityVulnerabilities(orderBy: $orderBy, ecosystem: $ecosystem, package: $package, severities: $severities, after: $after, before: $before, first: $first, last: $last){
+        totalCount
+    }
+}

@@ -1,0 +1,9 @@
+query repositoryOwner($size: Int, $login: String!){
+    repositoryOwner(login: $login){
+        avatarUrl(size: $size)
+        id
+        login
+        resourcePath
+        url
+    }
+}

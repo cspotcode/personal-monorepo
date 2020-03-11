@@ -1,0 +1,5 @@
+query securityAdvisories($orderBy: SecurityAdvisoryOrder, $identifier: SecurityAdvisoryIdentifierFilter, $publishedSince: DateTime, $updatedSince: DateTime, $after: String, $before: String, $first: Int, $last: Int){
+    securityAdvisories(orderBy: $orderBy, identifier: $identifier, publishedSince: $publishedSince, updatedSince: $updatedSince, after: $after, before: $before, first: $first, last: $last){
+        totalCount
+    }
+}

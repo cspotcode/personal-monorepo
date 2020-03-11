@@ -1,0 +1,5 @@
+mutation updateBranchProtectionRule($input: UpdateBranchProtectionRuleInput!){
+    updateBranchProtectionRule(input: $input){
+        clientMutationId
+    }
+}

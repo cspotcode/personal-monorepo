@@ -1,0 +1,6 @@
+mutation updateEnterpriseTwoFactorAuthenticationRequiredSetting($input: UpdateEnterpriseTwoFactorAuthenticationRequiredSettingInput!){
+    updateEnterpriseTwoFactorAuthenticationRequiredSetting(input: $input){
+        clientMutationId
+        message
+    }
+}

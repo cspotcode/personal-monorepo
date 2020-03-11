@@ -1,0 +1,5 @@
+mutation createTeamDiscussionComment($input: CreateTeamDiscussionCommentInput!){
+    createTeamDiscussionComment(input: $input){
+        clientMutationId
+    }
+}

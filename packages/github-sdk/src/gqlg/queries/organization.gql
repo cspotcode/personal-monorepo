@@ -1,0 +1,35 @@
+query organization($type: PinnableItemType, $size: Int, $login: String!){
+    organization(login: $login){
+        anyPinnableItems(type: $type)
+        avatarUrl(size: $size)
+        createdAt
+        databaseId
+        description
+        descriptionHTML
+        email
+        id
+        isVerified
+        location
+        login
+        name
+        newTeamResourcePath
+        newTeamUrl
+        organizationBillingEmail
+        pinnedItemsRemaining
+        projectsResourcePath
+        projectsUrl
+        requiresTwoFactorAuthentication
+        resourcePath
+        teamsResourcePath
+        teamsUrl
+        updatedAt
+        url
+        viewerCanAdminister
+        viewerCanChangePinnedItems
+        viewerCanCreateProjects
+        viewerCanCreateRepositories
+        viewerCanCreateTeams
+        viewerIsAMember
+        websiteUrl
+    }
+}

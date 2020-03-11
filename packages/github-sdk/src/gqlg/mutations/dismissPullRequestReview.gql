@@ -1,0 +1,5 @@
+mutation dismissPullRequestReview($input: DismissPullRequestReviewInput!){
+    dismissPullRequestReview(input: $input){
+        clientMutationId
+    }
+}

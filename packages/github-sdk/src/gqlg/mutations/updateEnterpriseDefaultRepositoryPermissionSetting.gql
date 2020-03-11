@@ -1,0 +1,6 @@
+mutation updateEnterpriseDefaultRepositoryPermissionSetting($input: UpdateEnterpriseDefaultRepositoryPermissionSettingInput!){
+    updateEnterpriseDefaultRepositoryPermissionSetting(input: $input){
+        clientMutationId
+        message
+    }
+}

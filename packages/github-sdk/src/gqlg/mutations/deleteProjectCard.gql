@@ -1,0 +1,6 @@
+mutation deleteProjectCard($input: DeleteProjectCardInput!){
+    deleteProjectCard(input: $input){
+        clientMutationId
+        deletedCardId
+    }
+}

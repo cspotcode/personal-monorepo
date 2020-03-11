@@ -1,0 +1,5 @@
+mutation addPullRequestReviewComment($input: AddPullRequestReviewCommentInput!){
+    addPullRequestReviewComment(input: $input){
+        clientMutationId
+    }
+}

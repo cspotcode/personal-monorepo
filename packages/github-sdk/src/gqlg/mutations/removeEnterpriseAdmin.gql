@@ -1,0 +1,6 @@
+mutation removeEnterpriseAdmin($input: RemoveEnterpriseAdminInput!){
+    removeEnterpriseAdmin(input: $input){
+        clientMutationId
+        message
+    }
+}

@@ -1,0 +1,6 @@
+mutation updateEnterpriseRepositoryProjectsSetting($input: UpdateEnterpriseRepositoryProjectsSettingInput!){
+    updateEnterpriseRepositoryProjectsSetting(input: $input){
+        clientMutationId
+        message
+    }
+}

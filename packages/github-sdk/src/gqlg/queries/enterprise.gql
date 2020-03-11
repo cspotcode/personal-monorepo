@@ -1,0 +1,16 @@
+query enterprise($size: Int, $slug: String!, $invitationToken: String){
+    enterprise(slug: $slug, invitationToken: $invitationToken){
+        avatarUrl(size: $size)
+        createdAt
+        databaseId
+        description
+        descriptionHTML
+        id
+        location
+        name
+        resourcePath
+        url
+        viewerIsAdmin
+        websiteUrl
+    }
+}

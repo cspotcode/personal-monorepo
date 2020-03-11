@@ -1,0 +1,10 @@
+query meta{
+    meta{
+        gitHubServicesSha
+        gitIpAddresses
+        hookIpAddresses
+        importerIpAddresses
+        isPasswordAuthenticationVerifiable
+        pagesIpAddresses
+    }
+}

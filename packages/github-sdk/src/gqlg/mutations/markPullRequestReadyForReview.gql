@@ -1,0 +1,5 @@
+mutation markPullRequestReadyForReview($input: MarkPullRequestReadyForReviewInput!){
+    markPullRequestReadyForReview(input: $input){
+        clientMutationId
+    }
+}

@@ -1,0 +1,5 @@
+mutation inviteEnterpriseAdmin($input: InviteEnterpriseAdminInput!){
+    inviteEnterpriseAdmin(input: $input){
+        clientMutationId
+    }
+}

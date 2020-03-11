@@ -1,0 +1,8 @@
+query enterpriseAdministratorInvitationByToken($invitationToken: String!){
+    enterpriseAdministratorInvitationByToken(invitationToken: $invitationToken){
+        createdAt
+        email
+        id
+        role
+    }
+}

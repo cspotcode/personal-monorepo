@@ -1,0 +1,5 @@
+mutation archiveRepository($input: ArchiveRepositoryInput!){
+    archiveRepository(input: $input){
+        clientMutationId
+    }
+}

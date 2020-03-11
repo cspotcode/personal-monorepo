@@ -1,0 +1,6 @@
+mutation updateTopics($input: UpdateTopicsInput!){
+    updateTopics(input: $input){
+        clientMutationId
+        invalidTopicNames
+    }
+}

@@ -1,0 +1,5 @@
+mutation addReaction($input: AddReactionInput!){
+    addReaction(input: $input){
+        clientMutationId
+    }
+}

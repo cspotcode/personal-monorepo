@@ -1,0 +1,6 @@
+mutation updateEnterpriseMembersCanViewDependencyInsightsSetting($input: UpdateEnterpriseMembersCanViewDependencyInsightsSettingInput!){
+    updateEnterpriseMembersCanViewDependencyInsightsSetting(input: $input){
+        clientMutationId
+        message
+    }
+}

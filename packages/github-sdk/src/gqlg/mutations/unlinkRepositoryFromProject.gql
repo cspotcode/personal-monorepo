@@ -1,0 +1,5 @@
+mutation unlinkRepositoryFromProject($input: UnlinkRepositoryFromProjectInput!){
+    unlinkRepositoryFromProject(input: $input){
+        clientMutationId
+    }
+}

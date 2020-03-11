@@ -1,0 +1,16 @@
+query licenses{
+    licenses{
+        body
+        description
+        featured
+        hidden
+        id
+        implementation
+        key
+        name
+        nickname
+        pseudoLicense
+        spdxId
+        url
+    }
+}

@@ -1,0 +1,6 @@
+mutation createDeployment($input: CreateDeploymentInput!){
+    createDeployment(input: $input){
+        autoMerged
+        clientMutationId
+    }
+}

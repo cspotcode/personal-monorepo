@@ -1,0 +1,5 @@
+mutation deleteBranchProtectionRule($input: DeleteBranchProtectionRuleInput!){
+    deleteBranchProtectionRule(input: $input){
+        clientMutationId
+    }
+}

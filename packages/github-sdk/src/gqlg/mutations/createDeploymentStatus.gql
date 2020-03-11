@@ -1,0 +1,5 @@
+mutation createDeploymentStatus($input: CreateDeploymentStatusInput!){
+    createDeploymentStatus(input: $input){
+        clientMutationId
+    }
+}

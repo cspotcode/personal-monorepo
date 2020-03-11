@@ -1,0 +1,8 @@
+query enterpriseAdministratorInvitation($userLogin: String!, $enterpriseSlug: String!, $role: EnterpriseAdministratorRole!){
+    enterpriseAdministratorInvitation(userLogin: $userLogin, enterpriseSlug: $enterpriseSlug, role: $role){
+        createdAt
+        email
+        id
+        role
+    }
+}
