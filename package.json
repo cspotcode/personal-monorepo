@@ -66,5 +66,8 @@
   },
   "_installConfig": {
     "pnp": true
+  },
+  "dependencies": {
+    "np": "^6.2.0"
   }
 }

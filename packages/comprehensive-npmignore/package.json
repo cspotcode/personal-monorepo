@@ -2,9 +2,7 @@
   "name": "comprehensive-npmignore",
   "version": "0.0.1",
   "description": "Verify that everything is either explicitly excluded by npmignore or included by files array.",
-  "bin": {
-    "comprehensive-npmignore": "./index.js"
-  },
+  "bin": "./index.js",
   "personalMonoRepoMeta": {
     "livesIn": "mono"
   },

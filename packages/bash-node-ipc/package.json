@@ -6,9 +6,7 @@
   "version": "0.0.1",
   "license": "MIT",
   "main": "dist/index",
-  "bin": {
-    "bash-node-ipc": "dist/bin/bash-node-ipc.js"
-  },
+  "bin": "dist/bin/bash-node-ipc.js",
   "files": [
     "dist",
     "src"
