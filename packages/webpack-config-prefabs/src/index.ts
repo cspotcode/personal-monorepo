@@ -105,7 +105,7 @@ export function nodeLibrary(module: NodeJSModuleFields, options: NodeLibraryOpti
     
     // Detect entry-point shebang
     const shebang = fs.readFileSync(entryAbs, 'utf8').split('\n')[0];
-    const nodeRequireBoilerplate = 'var __node_require__ = require;';
+    const nodeRequireBoilerplate = 'var __node_require__ = require, __node_module__ = module;';
     const bannerPlugin = 
         shebang.slice(0, 2) === '#!'
         ? [new BannerPlugin({ banner: `${ shebang }\n${ nodeRequireBoilerplate }`, raw: true })]
