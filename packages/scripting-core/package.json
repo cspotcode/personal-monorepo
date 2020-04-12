@@ -40,8 +40,8 @@
     "yarn-error.log"
   ],
   "scripts": {
-    "build": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\npackage-scripts.sh",
-    "docs": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\npackage-scripts.sh",
-    "test": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\npackage-scripts.sh"
+    "build": "./package-scripts.sh",
+    "docs": "./package-scripts.sh",
+    "test": "./package-scripts.sh"
   }
 }

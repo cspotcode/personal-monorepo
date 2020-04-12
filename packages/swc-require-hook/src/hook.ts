@@ -1,4 +1,4 @@
-import {transformFileSync, Options} from 'swc';
+import {transformFileSync, Options} from '@swc/core';
 
 export function register() {
     const tsConfig = config({tsx: false});

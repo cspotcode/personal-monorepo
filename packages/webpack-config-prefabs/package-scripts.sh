@@ -17,7 +17,7 @@ build)
     ;;
 test)
     # invokeDefault
-    comprehensive-npmignore
+    yarn run -T comprehensive-npmignore
     ;;
 prepublishOnly)
     invokeDefault

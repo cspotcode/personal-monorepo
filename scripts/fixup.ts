@@ -215,7 +215,8 @@ function main() {
     }
     function updateNpmScripts(root: string, npmScriptsRelativePath: string) {
         const npmScriptsPath = Path.join(root, npmScriptsRelativePath);
-        const script = `# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n${ npmScriptsRelativePath }`;
+        // const script = `# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n${ npmScriptsRelativePath }`;
+        const script = `${ npmScriptsRelativePath }`;
         const npmScriptsSh = readTextFile(npmScriptsPath);
         const npmScripts = tryFilterMap(
             extractDelimitedSpan(npmScriptsSh, '###<NAMES>', '###</NAMES>').split('\n'),

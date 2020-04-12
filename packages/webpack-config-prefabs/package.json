@@ -4,7 +4,7 @@
   "main": "dist/index",
   "devDependencies": {
     "@types/lodash": "^4.14.122",
-    "typescript": "^3.5.2"
+    "typescript": "3.8.3"
   },
   "dependencies": {
     "@types/webpack": "^4.4.34",
@@ -18,10 +18,10 @@
     "webpack-cli": "*"
   },
   "scripts": {
-    "clean": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./package-scripts.sh",
-    "test": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./package-scripts.sh",
-    "prepublishOnly": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./package-scripts.sh",
-    "build": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./package-scripts.sh"
+    "clean": "./package-scripts.sh",
+    "test": "./package-scripts.sh",
+    "prepublishOnly": "./package-scripts.sh",
+    "build": "./package-scripts.sh"
   },
   "personalMonoRepoMeta": {
     "livesIn": "mono"

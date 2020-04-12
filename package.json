@@ -2,7 +2,9 @@
   "name": "@cspotcode/personal-monorepo",
   "private": true,
   "workspaces": {
-    "packages": ["packages/!(__template__)"],
+    "packages": [
+      "packages/!(__template__)"
+    ],
     "nohoist": [
       "*/ts-node",
       "github-sdk/@graphql-codegen/*"
@@ -11,19 +13,19 @@
   "version": "0.0.0-does-not-matter",
   "license": "MIT",
   "scripts": {
-    "fixup": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./scripts/root-scripts.sh",
-    "new-package": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./scripts/root-scripts.sh",
-    "focus": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./scripts/root-scripts.sh",
-    "package-command": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./scripts/root-scripts.sh",
-    "shell": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./scripts/root-scripts.sh",
-    "exit": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./scripts/root-scripts.sh",
-    "lerna": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./scripts/root-scripts.sh",
-    "dump-env": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./scripts/root-scripts.sh",
-    "preinstall": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./scripts/root-scripts.sh"
+    "fixup": "./scripts/root-scripts.sh",
+    "new-package": "./scripts/root-scripts.sh",
+    "focus": "./scripts/root-scripts.sh",
+    "package-command": "./scripts/root-scripts.sh",
+    "shell": "./scripts/root-scripts.sh",
+    "exit": "./scripts/root-scripts.sh",
+    "lerna": "./scripts/root-scripts.sh",
+    "dump-env": "./scripts/root-scripts.sh",
+    "preinstall": "./scripts/root-scripts.sh"
   },
   "devDependencies": {
-    "@microsoft/api-documenter": "^1.5.59",
-    "@microsoft/api-extractor": "^6.3.0",
+    "@microsoft/api-documenter": "7.7.18",
+    "@microsoft/api-extractor": "7.7.13",
     "@types/expect": "^1.20.4",
     "@types/glob": "^7.1.1",
     "@types/inquirer": "^6.0.3",
@@ -35,6 +37,7 @@
     "@types/xregexp": "^3.0.29",
     "@typescript-eslint/eslint-plugin": "^1.4.0",
     "@typescript-eslint/parser": "^1.4.0",
+    "@yarnpkg/pnpify": "^2.0.0-rc.20",
     "comprehensive-npmignore": "^0.0.1",
     "cross-spawn": "^6.0.5",
     "dgeni": "^0.4.11",

@@ -1,20 +1,21 @@
-.pnp
 node_modules
 docs-clone
 {yarn,lerna,npm}-{debug,error}.log
 monorepo-template
-node_modules
-packages/*/dist
-packages/*/docs
-packages/*/node_modules
-packages/*/src/node_modules
-packages/*/example/node_modules
-packages/*/test/node_modules
-packages/*/tsconfig.tsbuildinfo
+/packages/*/dist
+/packages/*/docs
+/packages/*/node_modules
+/packages/*/src/node_modules
+/packages/*/example/node_modules
+/packages/*/test/node_modules
+/packages/*/tsconfig.tsbuildinfo
 personal-monorepo-focused.code-workspace
 tsconfig.tsbuildinfo
 yarn.lock
 yarn-error.log
+/.yarn/cache
+/.yarn/build-state.yml
+/.yarn/install-state.gz
 
 
 ### <FIXUP>
@@ -49,6 +50,7 @@ packages/*
 !packages/preprocessor
 !packages/react-styled-components
 !packages/scripting-core
+!packages/swc-require-hook
 !packages/testing-core
 !packages/ts-node-to
 !packages/ts-wrapper

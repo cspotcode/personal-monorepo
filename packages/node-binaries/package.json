@@ -6,8 +6,8 @@
   },
   "license": "MIT",
   "bin": {
-    "node-binary-path": "node-binary-path.js",
-    "node-binary": "node-binary"
+    "node-binary": "node-binary",
+    "node-binary-path": "node-binary-path.js"
   },
   "main": "index.js",
   "files": [

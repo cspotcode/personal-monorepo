@@ -33,9 +33,9 @@
     "url": "https://cspotcode.com"
   },
   "peerDependencies": {
-    "swc": "*"
+    "@swc/core": "*"
   },
   "devDependencies": {
-    "swc": "^1.0.6"
+    "@swc/core": "1.1.39"
   }
 }

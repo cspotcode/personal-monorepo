@@ -23,7 +23,6 @@
     "ts-node-to": "bin.js",
     "ts-node-transpile-only": "bin.js"
   },
-  "dependencies": {},
   "peerDependencies": {
     "ts-node": "*"
   },

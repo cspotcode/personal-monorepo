@@ -9,7 +9,6 @@
     "build": "tsc -p .",
     "test": "comprehensive-npmignore"
   },
-  "dependencies": {},
   "personalMonoRepoMeta": {
     "livesIn": "mono"
   },

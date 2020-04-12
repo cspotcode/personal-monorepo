@@ -30,20 +30,20 @@
     "url": "https://cspotcode.com"
   },
   "scripts": {
-    "build": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./package-scripts.sh",
-    "docs": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./package-scripts.sh",
-    "test": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./package-scripts.sh",
-    "codegen": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./package-scripts.sh"
+    "build": "./package-scripts.sh",
+    "docs": "./package-scripts.sh",
+    "test": "./package-scripts.sh",
+    "codegen": "./package-scripts.sh"
   },
   "dependencies": {
     "graphql": "^14.6.0"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.13.0",
-    "@graphql-codegen/typescript": "1.13.0",
-    "@graphql-codegen/typescript-operations": "1.13.0",
-    "@graphql-codegen/typescript-graphql-request": "1.13.0",
     "@graphql-codegen/introspection": "1.13.0",
+    "@graphql-codegen/typescript": "1.13.0",
+    "@graphql-codegen/typescript-graphql-request": "1.13.0",
+    "@graphql-codegen/typescript-operations": "1.13.0",
     "gql-generator": "1.0.12"
   }
 }

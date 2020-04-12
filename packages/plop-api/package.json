@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "main": "dist/plop",
   "scripts": {
-    "build": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./package-scripts.sh",
-    "docs": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./package-scripts.sh",
-    "test": "# || echo - && echo ----- && echo NPM SCRIPTS MUST BE RUN FROM BASH! && echo ----- && echo - && exit 1\n./package-scripts.sh"
+    "build": "./package-scripts.sh",
+    "docs": "./package-scripts.sh",
+    "test": "./package-scripts.sh"
   },
   "license": "MIT",
   "personalMonoRepoMeta": {
@@ -50,6 +50,6 @@
     "v8flags": "^2.0.10"
   },
   "devDependencies": {
-    "typescript": "^3.5.3"
+    "typescript": "3.8.3"
   }
 }

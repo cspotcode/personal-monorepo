@@ -34,7 +34,7 @@ test)
 
     mocha
 
-    comprehensive-npmignore
+    yarn run -T comprehensive-npmignore
     ;;
 
 prepublishOnly)
