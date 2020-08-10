@@ -154,7 +154,7 @@ export function nodeLibrary(module: NodeJSModuleFields, options: NodeLibraryOpti
                     test: /\.ts$/,
                     exclude: /node_modules/,
                     use: [{
-                        loader: 'ts-loader',
+                        loader: require.resolve('ts-loader'),
                         options: {
                             transpileOnly: true,
                             compilerOptions: {
@@ -175,7 +175,7 @@ export function nodeLibrary(module: NodeJSModuleFields, options: NodeLibraryOpti
                 // doesn't pass through sourcemaps
                 {
                     test: /\.(?:tsx?|jsx?)$/,
-                    loader: 'string-replace-loader',
+                    loader: require.resolve('string-replace-loader'),
                     options: {
                         search: '^#![^\n]*?\n',
                         replace: '\n',
@@ -184,7 +184,7 @@ export function nodeLibrary(module: NodeJSModuleFields, options: NodeLibraryOpti
                 },
                 ...ingestSourceMaps ? [T<RuleSetRule>({
                     test: /\.(js|ts|tsx|jsx)$/,
-                    use: ["source-map-loader"],
+                    use: [require.resolve("source-map-loader")],
                     enforce: "pre"
                 })] : []
             ]

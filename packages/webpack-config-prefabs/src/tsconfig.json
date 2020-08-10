@@ -6,7 +6,7 @@
          // ./src dirs are the only ones that emit compiled code
         "noEmit": false,
 
-         "rootDir": ".",
+        "rootDir": ".",
         "outDir": "../dist",
     }
 }

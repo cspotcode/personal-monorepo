@@ -1,6 +1,6 @@
 {
   "name": "webpack-config-prefabs",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/index",
   "devDependencies": {
     "@types/lodash": "^4.14.122",
@@ -13,6 +13,7 @@
     "source-map-loader": "*",
     "string-replace-loader": "*",
     "ts-loader": "*",
+    "tslib": "^2.0.1",
     "typescript": "*",
     "webpack": "*",
     "webpack-cli": "*"
