@@ -1,6 +1,6 @@
 {
   "name": "webpack-config-prefabs",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "dist/index",
   "devDependencies": {
     "@types/lodash": "^4.14.122",
