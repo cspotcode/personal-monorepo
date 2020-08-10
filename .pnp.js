@@ -4161,6 +4161,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:13.13.15::__archiveUrl=https%3A%2F%2Fregistry.npmjs.org%2F%40types%2Fnode%2F-%2Fnode-13.13.15.tgz"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:14.0.27::__archiveUrl=https%3A%2F%2Fregistry.npmjs.org%2F%40types%2Fnode%2F-%2Fnode-14.0.27.tgz", {
+          "packageLocation": "../../../../home/cspotcode/.yarn/berry/cache/@types-node-npm-14.0.27-1a75110252-5.zip/node_modules/@types/node/",
+          "packageDependencies": [
+            ["@types/node", "npm:14.0.27::__archiveUrl=https%3A%2F%2Fregistry.npmjs.org%2F%40types%2Fnode%2F-%2Fnode-14.0.27.tgz"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["@types/node-fetch", [
@@ -18806,6 +18813,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["webpack-config-prefabs", "workspace:packages/webpack-config-prefabs"],
             ["@types/lodash", "npm:4.14.149"],
+            ["@types/node", "npm:14.0.27::__archiveUrl=https%3A%2F%2Fregistry.npmjs.org%2F%40types%2Fnode%2F-%2Fnode-14.0.27.tgz"],
             ["@types/webpack", "npm:4.41.10"],
             ["find-up", "npm:4.1.0"],
             ["lodash", "npm:4.17.15"],

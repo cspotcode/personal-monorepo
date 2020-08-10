@@ -83,13 +83,18 @@ type NodeLibraryOptions = {
     [K in Exclude<keyof FullNodeLibraryOptions, keyof typeof defaultOptions>]: FullNodeLibraryOptions[K];
 };
 
-/** We only need a few fields from the module object. */
-type NodeJSModuleFields = Pick<NodeJS.Module, 'filename'>;
+/** We only need a few fields from the `module` object. */
+type NodeJSModuleFields = {
+    filename: string
+};
 
 /**
  * Sensible webpack configuration for bundling a node library into a single file.
  * 
  * Usage: module.exports = nodeLibrary(module, {/* override defaults here * /});
+ * 
+ * The first argument is your `module` object, which is a convenient way for us to
+ * get your `__dirname` and perhaps other bits of metadata in the future.
  */
 export function nodeLibrary(module: NodeJSModuleFields, options: NodeLibraryOptions) {
     const __dirname = Path.dirname(module.filename);
