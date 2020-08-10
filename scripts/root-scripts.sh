@@ -55,6 +55,11 @@ package-command)
     "$@"
     ;;
 
+g:shell)
+    cd $INIT_CWD
+    exec "$@"
+    ;;
+
 shell)
     exec "$@"
     ;;
