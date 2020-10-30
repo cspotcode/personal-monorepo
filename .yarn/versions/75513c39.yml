@@ -1,0 +1,8 @@
+declined:
+  - "@cspotcode/personal-monorepo"
+
+undecided:
+  - comprehensive-npmignore
+  - node-binaries
+  - node-module-hooks
+  - plop-api

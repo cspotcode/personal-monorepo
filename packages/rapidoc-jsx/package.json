@@ -1,11 +1,14 @@
 {
   "name": "rapidoc-jsx",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "personalMonoRepoMeta": {
     "livesIn": "mono"
   },
   "license": "MIT",
-  "main": "dist/index",
+  "main": "dist/rapidoc-jsx.cjs.development.js",
+  "scripts": {
+    "build": "tsdx build"
+  },
   "files": [
     "dist",
     "src",
@@ -43,7 +46,8 @@
     "prettier": "^2.1.2",
     "rapidoc": "^8.3.0",
     "react": "^17.0.1",
-    "ts-node": "^9.0.0"
+    "ts-node": "^9.0.0",
+    "tsdx": "^0.14.1"
   },
   "peerDependencies": {
     "@types/react": "*",

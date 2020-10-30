@@ -44,9 +44,10 @@ function factory(plop: PlopApi) {
                         },
                         ...answers.packages
                     ]
-                }
+                },
+                null, 2
             ));
-            return `Updated ${ focusedWorkspacePath }`;
+            return `Updated ${ workspacePath }`;
         }]
     });
     plop.setGenerator('new-package', {
