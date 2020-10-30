@@ -1,0 +1,52 @@
+{
+  "name": "rapidoc-jsx",
+  "version": "0.0.0",
+  "personalMonoRepoMeta": {
+    "livesIn": "mono"
+  },
+  "license": "MIT",
+  "main": "dist/index",
+  "files": [
+    "dist",
+    "src",
+    "tsconfig.json"
+  ],
+  "npmignore": [
+    ".yarnrc",
+    "example",
+    "scripts",
+    "test",
+    "yarn.lock",
+    "yarn-error.log"
+  ],
+  "homepage": "https://github.com/cspotcode/personal-monorepo/tree/master/packages/rapidoc-jsx",
+  "bugs": "https://github.com/cspotcode/personal-monorepo/issues?labels=P:rapidoc-jsx",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cspotcode/personal-monorepo.git"
+  },
+  "author": {
+    "name": "Andrew Bradley",
+    "url": "https://cspotcode.com"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.4",
+    "@types/jsdom": "^16.2.5",
+    "@types/lodash": "^4.14.164",
+    "@types/node": "^14.14.6",
+    "@types/prettier": "^2.1.5",
+    "@types/react": "^16.9.55",
+    "jquery": "^3.5.1",
+    "jsdom": "^16.4.0",
+    "lodash": "^4.17.20",
+    "outdent": "^0.7.1",
+    "prettier": "^2.1.2",
+    "rapidoc": "^8.3.0",
+    "react": "^17.0.1",
+    "ts-node": "^9.0.0"
+  },
+  "peerDependencies": {
+    "@types/react": "*",
+    "react": "*"
+  }
+}
