@@ -1,4 +1,4 @@
-#!/usr/bin/env ts-node-to
+#!/usr/bin/env ts-node-transpile-only
 import fs from 'fs';
 import glob from 'glob';
 import process from 'process';

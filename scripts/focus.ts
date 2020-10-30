@@ -1,9 +1,13 @@
-#!/usr/bin/env ts-node-to
+#!/usr/bin/env ts-node-transpile-only
 import { patchJsonFile } from "../packages/scripting-core/src/core";
 import {sortBy, difference, pick} from 'lodash';
 import Path from 'path';
 import { workspaceFilename } from './fixup';
 import assert from 'assert';
+
+console.log('pretty sure this script has been moved to plop and should not be run.');
+console.log('aborting');
+process.exit(1);
 
 const [action, ..._focusOn] = process.argv.slice(2) as ['add' | 'rm' | 'reset', ...string[]];
 const targets = _focusOn.map(v => Path.basename(v));

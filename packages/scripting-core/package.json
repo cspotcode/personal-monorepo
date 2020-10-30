@@ -6,10 +6,12 @@
     "@types/node": "^11.9.4",
     "@types/shelljs": "^0.8.3",
     "cross-spawn": "^6.0.5",
+    "glob": "^7.1.6",
     "json5": "^2.1.0",
     "lodash": "^4.17.11",
     "mkdirp": "^0.5.1",
-    "shelljs": "^0.8.3"
+    "shelljs": "^0.8.3",
+    "tslib": "^2.0.3"
   },
   "personalMonoRepoMeta": {
     "livesIn": "mono"
@@ -43,5 +45,8 @@
     "build": "./package-scripts.sh",
     "docs": "./package-scripts.sh",
     "test": "./package-scripts.sh"
+  },
+  "devDependencies": {
+    "@types/glob": "^7"
   }
 }
