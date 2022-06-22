@@ -37,7 +37,7 @@
     "url": "https://cspotcode.com"
   },
   "dependencies": {
-    "shell-quote": "^1.7.2"
+    "shell-quote": "^1.7.3"
   },
   "scripts": {
     "postinstall": "node ./postinstall.js"
